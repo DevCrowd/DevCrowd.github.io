@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DevCrowd">
+    <meta name="keywords" content="konferencja, DevCrowd">
+
+    <title>DevCrowd</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarD">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">DevCrowd</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarD">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">O Devcrowd</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#location">Lokalizacja</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#call4">Call4Papers</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>DevCrowd</h1>
+				<hr>
+				<p>Szczecin, 23 kwietnia 2016</p>
+                <p><a href="#about" class="btn btn-primary btn-xl page-scroll">O DevCrowd</a></p>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">O Devcrowd</h2>
+                    <hr class="light">
+					<p>Otwarta, bezpłatna szczecińska konferencja DevCrowd - dla programistów JAVA</br>i innych specjalistów IT</p>
+                    <p class="text-faded">W edycji 2015 pobiliście rekord frekwencji –
+					ponad 200 uczestników!</br>
+					Po raz pierwszy wystąpienia były wygłaszane w 3 salach równocześnie,</br>
+					dzięki temu wybierać mogliście spośród 17 prezentacji.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	
+	
+        <div class="container location" id="location">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Lokalizacja</h2>
+                    <hr class="primary">
+					<p><a href="http://wi.zut.edu.pl/" target="_blank">Wydział Informatyki Zachodniopomorskiego Uniwersytetu Technologicznego</a><br class="blank" />
+					<br />Budynek nr 2<br />ul. Żołnierska 52<br />Szczecin</p>
+				</div>
+			</div>
+		</div>   
+		<div id="map"></div>
+	
+	
+
+	<section class="bg-dark" id="call4">
+		<div class="col-lg-12 text-center">
+			<h2 class="section-heading">Call4Papers</h2>
+			<hr class="light">
+			<h4 class="space">Masz pomysł na prezentację? Zgłoś się!</h4>		
+		</div>
+		<div class="container">	
+			<form class="form-horizontal" role="form">
+			
+			   <div class = "form-group">
+				  <label for = "user" class = "col-sm-2 control-label">Imie i nazwisko</label>
+					
+				  <div class = "col-sm-10">
+					 <input type = "text" class = "form-control" id = "user">
+				  </div>
+			   </div>
+			   
+			   <div class = "form-group">
+				  <label for = "email" class = "col-sm-2 control-label">Email</label>
+					
+				  <div class = "col-sm-10">
+					 <input type = "text" class = "form-control" id = "email">
+				  </div>
+			   </div>
+			   
+			   <div class = "form-group">
+				  <label for = "theme" class = "col-sm-2 control-label">Temat Prezentacji</label>
+					
+				  <div class = "col-sm-10">
+					 <input type = "text" class = "form-control" id = "theme" maxlength="80">
+				  </div>
+			   </div>
+			   
+			   <div class = "form-group">
+				  <label for = "lang" class = "col-sm-2 control-label">Język prelekcji</label>
+					
+				  <div class = "col-sm-10">
+					 <input type = "text" class = "form-control" id = "lang">
+				  </div>
+			   </div>
+			   
+			   <div class = "form-group">
+				  <label for = "theme" class = "col-sm-2 control-label">Opis wystąpienia</label>
+				  <div class = "col-sm-10">
+				  <textarea class = "form-control" rows = "4" maxlength="500"></textarea>
+				  <p class="help-block">Maksymalnie 500 znaków</p>
+					</div>
+			   </div>
+			   
+			   <div class = "form-group">
+				  <label for = "user" class = "col-sm-2 control-label">Opis prelegenta</label>
+				  <div class = "col-sm-10">
+				  <textarea class = "form-control" rows = "3" maxlength="500"></textarea>
+				  <p class="help-block">Maksymalnie 500 znaków</p>
+					</div>
+			   </div>
+			   
+			   <div class = "form-group space">
+				  <label for = "size" class = "col-sm-2 control-label">Rozmiar koszulki</label>
+				  <div class = "col-sm-10">
+					  <select class = "form-control">
+						 <option>S</option>
+						 <option>M</option>
+						 <option>L</option>
+						 <option>XL</option>
+						 <option>XXL</option>
+					  </select>
+				  </div>
+			   </div>
+			   
+				<div class = "form-group">
+					<label for = "picture" class = "col-sm-2 control-label">Zdjęcie prelegenta</label>
+					<div class = "col-sm-10">
+						<input type = "file" id = "inputfile">
+					</div>
+			   </div>
+			   
+			   <div class = "form-group text-center">
+				  <div class = "col-sm-12">
+					 <a href="#" class="btn btn-default btn-xl wow tada">Zapisz</a>
+				  </div>
+			   </div>
+			   
+			</form>	
+		</div>
+	</section>
+	
+	<section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Sponsorzy</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<section class="bg-primary text-center" id="organizatorzy">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Organizatorzy</h2>
+                    <hr class="light space">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+      
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
+					<img class="img-circle" <img src="img/Sk8.jpg" class="img-responsive" alt="Marcin Dębski" width="140" height="140">
+					<h3>Marcin Dębski</h3>
+					<!-- <p>Programista, członek Szczecin JUG, Certified Scrum Master.</p> -->
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
+					<img class="img-circle" src="img/49215_100000730484018_3250_n.jpg" alt="Wojciech Dębowicz" width="140" height="140">
+					<h3>Wojciech Dębowicz</h3>
+					<!-- <p>Programista, członek Szczecin JUG.</p> -->
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
+					<img class="img-circle" src="img/kgrzasko.jpg" alt="Kamila Grząśko" width="140" height="140">
+					<h3>Kamila Grząśko</h3>
+					<!-- <p>Testerka oprogramowania, pasjonatka UX.</p> -->
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
+					<img class="img-circle" src="img/ed2d261ca5db36a17e690dc736dcd9ef.jpeg" alt="Dariusz „Lock” Łuksza" width="140" height="140">
+					<h3>Dariusz „Lock” Łuksza</h3>
+					<!-- <p>Programista, uczestnik Google Summer of Code, commiter w pojekcie EGit, Top Eclipse Contributor 2011, pasjonat OpenSource oraz Linuksa, autor blogów javablog.pl i luksza.org Członek SzJUG oraz SzLUUG.</p> -->
+				</div>
+			</div>
+			  
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-lg-3">
+					<img class="img-circle" src="img/357375a.jpg" alt="Szymon „Drops” Pacanowski" width="140" height="140">
+					<h3>Szymon „Drops” Pacanowski</h3>
+					<!-- <p>Założyciel Szczecin GTUG.</p> -->
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3">
+					<img class="img-circle" src="img/szmajdziul.jpg" alt="Maciej Szmajdziński" width="140" height="140">
+					<h3>Maciej Szmajdziński</h3>
+					<!-- <p>Programista Java.</p> -->
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3">
+					<img class="img-circle" src="img/madziak.jpg" alt="Magda Dębowicz" width="140" height="140">
+					<h3>Magda Dębowicz</h3>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3">
+					<img class="img-circle" src="img/48590_1130557572_6747_n.jpg" alt="Paweł „Amorfis” Stawicki" width="140" height="140">
+					<h3>Paweł „Amorfis” Stawicki</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div id="contact">
+        <div class="container foot">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Kontakt</h2>
+                    <hr class="primary">
+                    <p>Jeżeli masz jakieś pytania napisz do nas</p>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:info@devcrowd.pl">info@devcrowd.pl</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+      function initialize() {
+		var myLatLng = new google.maps.LatLng(53.448617, 14.491008);
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: myLatLng,
+          zoom: 17,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+		  scrollwheel: false
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+		
+		var marker=new google.maps.Marker({
+		  position:myLatLng,
+		  map: map
+		  });
+
+		}
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
+	
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+</body>
+
+</html>
