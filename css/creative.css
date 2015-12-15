@@ -28,6 +28,13 @@ hr.light {
 	height: 50%;
 	color: #f05f40;
 }
+
+.navimg{
+	margin-top: 5px;
+	width: 39px;
+	height: 40px;
+}
+
 .location{
 	padding-top: 40px;
     padding-bottom: 20px;	  
