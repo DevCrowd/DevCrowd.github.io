@@ -28,13 +28,39 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/css/formValidation.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/formValidation.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/framework/bootstrap.min.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<style>
+  .modal-header, .close {
+      background-color: #f05f40;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  </style>
 </head>
 
 <body id="page-top">
@@ -63,9 +89,9 @@
 					<li>
                         <a class="page-scroll" href="#location">Lokalizacja</a>
                     </li>
-                   <!-- <li>
+                    <li>
                         <a class="page-scroll" href="#call4">Call4Papers</a>
-                    </li>-->
+                    </li>
                     <li>
                         <a class="page-scroll" href="#contact">Kontakt</a>
                     </li>
@@ -109,8 +135,6 @@
         </div>
     </section>
 	
-	
-	
         <div class="container location" id="location">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -122,95 +146,150 @@
 			</div>
 		</div>   
 		<div id="map"></div>
-	
-	
 
-<!--	<section class="bg-dark" id="call4">
+	<section class="bg-dark" id="call4">
 		<div class="col-lg-12 text-center">
 			<h2 class="section-heading">Call4Papers</h2>
 			<hr class="light">
-			<h4 class="space">Masz pomysł na prezentację? Zgłoś się!</h4>		
+			<h4 class="space">Masz pomysł na prezentację? Zgłoś się!</h4>
+
 		</div>
-		<div class="container">	
-			<form class="form-horizontal" role="form">
+		<div class="text-center">
+			<button type="button" class="btn btn-default btn-lg" id="myBtn">Zgłaszam sie!</button>
+		</div>
 			
-			   <div class = "form-group">
-				  <label for = "user" class = "col-sm-2 control-label">Imie i nazwisko</label>
-					
-				  <div class = "col-sm-10">
-					 <input type = "text" class = "form-control" id = "user">
-				  </div>
-			   </div>
-			   
-			   <div class = "form-group">
-				  <label for = "email" class = "col-sm-2 control-label">Email</label>
-					
-				  <div class = "col-sm-10">
-					 <input type = "text" class = "form-control" id = "email">
-				  </div>
-			   </div>
-			   
-			   <div class = "form-group">
-				  <label for = "theme" class = "col-sm-2 control-label">Temat Prezentacji</label>
-					
-				  <div class = "col-sm-10">
-					 <input type = "text" class = "form-control" id = "theme" maxlength="80">
-				  </div>
-			   </div>
-			   
-			   <div class = "form-group">
-				  <label for = "lang" class = "col-sm-2 control-label">Język prelekcji</label>
-					
-				  <div class = "col-sm-10">
-					 <input type = "text" class = "form-control" id = "lang">
-				  </div>
-			   </div>
-			   
-			   <div class = "form-group">
-				  <label for = "theme" class = "col-sm-2 control-label">Opis wystąpienia</label>
-				  <div class = "col-sm-10">
-				  <textarea class = "form-control" rows = "4" maxlength="500"></textarea>
-				  <p class="help-block">Maksymalnie 500 znaków</p>
-					</div>
-			   </div>
-			   
-			   <div class = "form-group">
-				  <label for = "user" class = "col-sm-2 control-label">Opis prelegenta</label>
-				  <div class = "col-sm-10">
-				  <textarea class = "form-control" rows = "3" maxlength="500"></textarea>
-				  <p class="help-block">Maksymalnie 500 znaków</p>
-					</div>
-			   </div>
-			   
-			   <div class = "form-group space">
-				  <label for = "size" class = "col-sm-2 control-label">Rozmiar koszulki</label>
-				  <div class = "col-sm-10">
-					  <select class = "form-control">
-						 <option>S</option>
-						 <option>M</option>
-						 <option>L</option>
-						 <option>XL</option>
-						 <option>XXL</option>
-					  </select>
-				  </div>
-			   </div>
-			   
-				<div class = "form-group">
-					<label for = "picture" class = "col-sm-2 control-label">Zdjęcie prelegenta</label>
-					<div class = "col-sm-10">
-						<input type = "file" id = "inputfile">
-					</div>
-			   </div>
-			   
-			   <div class = "form-group text-center">
-				  <div class = "col-sm-12">
-					 <a href="#" class="btn btn-default btn-xl wow tada">Zapisz</a>
-				  </div>
-			   </div>
-			   
-			</form>	
-		</div>
-	</section>-->
+		<div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header" style="padding:35px 50px;">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4><span class="glyphicon glyphicon-inbox"></span> Zgłoszenie</h4>
+		        </div>
+		        <div class="modal-body" style="padding:40px 50px;">
+		          <form role="form" id="proposalForm" method="post">
+		            <div class="form-group">
+						<h4 class="text-center" style="color:#353230">Prezenter</h4>
+						<div class="form-group">
+							<input type="text" class="form-control" name="speaker[0].name" id="name" placeholder="Imię" />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="speaker[0].surname" id="surname" placeholder="Nazwisko" />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="speaker[0].email" id="email" placeholder="Email" />
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" rows="5" name="speaker[0].desc" id="descrition" placeholder="Opis"></textarea>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon3">Rozmiar koszulki</span>
+								<select class = "form-control" name="speaker[0].size" id="size">
+									<option>XS</option>
+									<option>S</option>
+									<option>M</option>
+									<option>L</option>
+									<option>XL</option>
+									<option>XXL</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon3">Zdjęcie</span>
+								<input type="file" class="form-control" name="speaker[0].picture" id="picture" placeholder="Zdjęcie" />
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="speaker[0].origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
+						</div>
+						<button type="button" class="btn btn-default addSpeakerButton"><i class="fa fa-plus"></i> Kolejny prezenter</button>
+		            </div>
+		            <div class="form-group hide" id="speakerTemplate">
+						<h4 class="text-center" style="color:#353230">Prezenter</h4>
+						<div class="form-group">
+							<input type="text" class="form-control" name="name" id="name" placeholder="Imię" />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="surname" id="surname" placeholder="Nazwisko" />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="email" id="email" placeholder="Email" />
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" rows="5" name="desc" id="descrition" placeholder="Opis"></textarea>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon3">Rozmiar koszulki</span>
+								<select class = "form-control" name="size" id="size">
+									<option>XS</option>
+									<option>S</option>
+									<option>M</option>
+									<option>L</option>
+									<option>XL</option>
+									<option>XXL</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon3">Zdjęcie</span>
+								<input type="file" class="form-control" name="picture" id="picture" placeholder="Zdjęcie" />
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
+						</div>
+						<button type="button" class="btn btn-default removeSpeakerButton"><i class="fa fa-minus"></i> Usuń prezentera</button>
+		            </div>
+		            <div class="form-group">
+						<h4 class="text-center" style="color:#353230">Prezentacja</h4>
+						<div class="form-group">
+							<input type="text" class="form-control" name="presentation[0].title" id="title" placeholder="Tytuł" />
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" rows="5" name="presentation[0].desc" id="description" placeholder="Opis"></textarea>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon3">Język</span>
+								<select class = "form-control" name="presentation[0].lang" id="lang">
+									<option>PL</option>
+									<option>ENG</option>
+								</select>
+							</div>
+						</div>
+						<button type="button" class="btn btn-default addPresentationButton"><i class="fa fa-plus"></i> Kolejna prezentacja</button>
+		            </div>
+		            <div class="form-group hide" id="presentationTemplate">
+						<h4 class="text-center" style="color:#353230">Prezentacja</h4>
+						<div class="form-group">
+							<input type="text" class="form-control" name="title" id="title" placeholder="Tytuł" />
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" rows="5" name="desc" id="description" placeholder="Opis"></textarea>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon3">Język</span>
+								<select class = "form-control" name="lang" id="lang">
+									<option>PL</option>
+									<option>ENG</option>
+								</select>
+							</div>
+						</div>
+						<button type="button" class="btn btn-default removePresentationButton"><i class="fa fa-minus"></i> Usuń prezentację</button>
+		            </div>
+		            
+		            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
+		          </form>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div> 
+	</section>
 	
 	<section>
         <div class="container">
@@ -284,7 +363,6 @@
 				<div class="col-xs-12 col-sm-6 col-lg-3">
 					<img class="img-circle" src="img/357375a.jpg" alt="Szymon „Drops” Pacanowski" width="140" height="140">
 					<h3>Szymon „Drops” Pacanowski</h3>
-					<!-- <p>Założyciel Szczecin GTUG.</p> -->
 				</div>
 				<div class="col-xs-12 col-sm-6 col-lg-3">
 					<img class="img-circle" src="img/szmajdziul.jpg" alt="Maciej Szmajdziński" width="140" height="140">
@@ -342,22 +420,7 @@
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
-
-	
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
-
+	<script src="js/c4p.js"></script>
 </body>
 
 </html>
