@@ -167,7 +167,7 @@
 		        </div>
 		        <div class="modal-body" style="padding:40px 50px;">
 		          <form role="form" id="proposalForm" method="post">
-		            <div class="form-group">
+		            <div class="form-group" type="speaker">
 						<h4 class="text-center" style="color:#353230">Prezenter</h4>
 						<div class="form-group">
 							<input type="text" class="form-control" name="speaker[0].name" id="name" placeholder="Imię" />
@@ -243,7 +243,7 @@
 						</div>
 						<button type="button" class="btn btn-default removeSpeakerButton"><i class="fa fa-minus"></i> Usuń prezentera</button>
 		            </div>
-		            <div class="form-group">
+		            <div class="form-group" type="presentation">
 						<h4 class="text-center" style="color:#353230">Prezentacja</h4>
 						<div class="form-group">
 							<input type="text" class="form-control" name="presentation[0].title" id="title" placeholder="Tytuł" />
@@ -282,7 +282,7 @@
 						<button type="button" class="btn btn-default removePresentationButton"><i class="fa fa-minus"></i> Usuń prezentację</button>
 		            </div>
 		            
-		            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
+		            <button id="c4pSave" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
 		          </form>
 		        </div>
 		      </div>

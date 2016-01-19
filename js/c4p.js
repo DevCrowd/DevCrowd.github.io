@@ -77,7 +77,86 @@ $(document).ready(function() {
             }
         },
         speakerIndex = 0,
-        presentationIndex = 0;
+        presentationIndex = 0,
+        preapreDataAndSend = function(htmlSpeakers, htmlPresentations) {
+        	var proposition = {},
+        		objectsToRead = htmlSpeakers.length + htmlPresentations.length,
+        		convertToSpeakersObjects = function(proposition, callback) {
+		        	var convertSpeaker = function(htmlSpeaker) {
+			    		var jQSpeaker = $(htmlSpeaker),
+			    			picEl = jQSpeaker.find('#picture').get(0),
+			    			result = {};
+
+						result.firstname = jQSpeaker.find('#name').val();
+			    		result.lastname = jQSpeaker.find('#surname').val();
+			    		result.email = jQSpeaker.find('#email').val();
+			    		result.descrition = jQSpeaker.find('#descrition').val();
+			    		result.origin = jQSpeaker.find('#origin').val();
+			    		result.teeSize = jQSpeaker.find('#size').val();
+
+						if (picEl.files.length > 0) {
+			    			var file = picEl.files[0],
+			    				reader = new FileReader();
+
+							reader.onload = function(readerEvt) {
+							    var binaryString = readerEvt.target.result;
+							    result.picture = btoa(binaryString);
+							    proposition.speakers.push(result);
+							    objectsToRead--;
+							
+								if (objectsToRead === 0) {
+									callback(proposition);
+								}
+							};
+
+							reader.readAsBinaryString(file);
+						} else {
+							proposition.speakers.push(result);
+							objectsToRead--;
+							
+							if (objectsToRead === 0) {
+								callback(proposition);
+							}
+						}
+			    	};
+
+		    		$.each(htmlSpeakers, function(i, val) {convertSpeaker(val);});
+		        },
+        		convertToPresentationObjects = function(proposition, callback) {
+		        	var convertPresentation = function(htmlPresentation) {
+			    		var jQPresentation = $(htmlPresentation),
+			    			result = {};
+
+						result.title = jQPresentation.find('#title').val();
+			    		result.description = jQPresentation.find('#description').val();
+			    		result.language = jQPresentation.find('#lang').val();
+
+						proposition.presentations.push(result);
+						objectsToRead--;
+						
+						if (objectsToRead === 0) {
+							callback(proposition);
+						}
+			    	};
+
+		    		$.each(htmlPresentations, function(i, val) {convertPresentation(val);});
+		        };
+
+        	proposition.speakers = [];
+        	proposition.presentations = [];
+
+			convertToPresentationObjects(proposition, send);
+			convertToSpeakersObjects(proposition, send);
+        },
+        send = function(data) {
+        	$.post( "localhost:8080", data)
+				.done(function( data ) {
+					//turn off spiner, give info of success
+				})
+				.fail(function() {
+					//turn off spiner, give info of failure
+				});
+        };
 
     $('#proposalForm')
         .formValidation({
@@ -101,12 +180,13 @@ $(document).ready(function() {
         .on('click', '.addSpeakerButton', function() {
             speakerIndex++;
             var template = $('#speakerTemplate'),
-                clone    = template
-                                .clone()
-                                .removeClass('hide')
-                                .removeAttr('id')
-                                .attr('data-speaker-index', speakerIndex)
-                                .insertBefore(template);
+                clone = template
+	                        .clone()
+	                        .removeClass('hide')
+	                        .removeAttr('id')
+	                        .attr('data-speaker-index', speakerIndex)
+	                        .attr('type', 'speaker')
+	                        .insertBefore(template);
 
             clone
                 .find('[name="name"]').attr('name', 'speaker[' + speakerIndex + '].name').end()
@@ -140,12 +220,13 @@ $(document).ready(function() {
         .on('click', '.addPresentationButton', function() {
             presentationIndex++;
             var template = $('#presentationTemplate'),
-                clone    = template
-                                .clone()
-                                .removeClass('hide')
-                                .removeAttr('id')
-                                .attr('data-presentation-index', presentationIndex)
-                                .insertBefore(template);
+                clone  = template
+                            .clone()
+                            .removeClass('hide')
+                            .removeAttr('id')
+                            .attr('data-presentation-index', presentationIndex)
+                            .attr('type', 'presentation')
+                            .insertBefore(template);
 
             clone
                 .find('[name="title"]').attr('name', 'presentation[' + presentationIndex + '].title').end()
@@ -167,5 +248,20 @@ $(document).ready(function() {
                 .formValidation('removeField', row.find('[name="presentation[' + index + '].lang"]'));
 
             row.remove();
+        }).on('click', '#c4pSave', function() {
+        	var form = $(this.parentElement),
+        		formValidation = form.data('formValidation');
+        	formValidation.validate();
+
+        	if (formValidation.isValid()) {
+        		//turn on spiner
+				preapreDataAndSend(form.find("[type=speaker]"), form.find("[type=presentation]"));
+        	}
+
+        	return false;
         });
 });
+
+function save(el) {
+
+}
