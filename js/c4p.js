@@ -261,7 +261,3 @@ $(document).ready(function() {
             return false;
         });
 });
-
-function save(el) {
-
-}
