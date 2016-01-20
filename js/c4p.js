@@ -90,7 +90,7 @@ $(document).ready(function() {
                         result.firstname = jQSpeaker.find('#name').val();
                         result.lastname = jQSpeaker.find('#surname').val();
                         result.email = jQSpeaker.find('#email').val();
-                        result.descrition = jQSpeaker.find('#descrition').val();
+                        result.description = jQSpeaker.find('#description').val();
                         result.origin = jQSpeaker.find('#origin').val();
                         result.teeSize = jQSpeaker.find('#size').val();
 
@@ -149,13 +149,20 @@ $(document).ready(function() {
             convertToSpeakersObjects(proposition, send);
         },
         send = function(data) {
-            $.post( "localhost:8080", data)
-                .done(function( data ) {
+            jQuery.ajax({
+                'type': 'POST',
+                'url': "http://localhost:8080/proposals",
+                'contentType': 'application/json',
+                'accept': 'application/json',
+                'data': JSON.stringify(data),
+                'dataType': 'json',
+                'success': function( data ) {
                     //turn off spiner, give info of success
-                })
-                .fail(function() {
+                },
+                'failure': function( data ) {
                     //turn off spiner, give info of failure
-                });
+                }
+            });
         };
 
     $('#proposalForm')
