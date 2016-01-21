@@ -244,6 +244,10 @@ $(document).ready(function() {
                 .formValidation('addField', 'presentation[' + presentationIndex + '].title', presentationTitleValidators)
                 .formValidation('addField', 'presentation[' + presentationIndex + '].desc', presentationDescValidators)
                 .formValidation('addField', 'presentation[' + presentationIndex + '].lang', selectionValidators);
+
+            if ($('#proposalForm').find("[type=presentation]").length >= 5) {
+                $('#proposalForm .addPresentationButton').attr("disabled", true);
+            }
         })
         .on('click', '.removePresentationButton', function() {
             var row  = $(this).parents('.form-group'),
@@ -255,6 +259,10 @@ $(document).ready(function() {
                 .formValidation('removeField', row.find('[name="presentation[' + index + '].lang"]'));
 
             row.remove();
+
+            if ($('#proposalForm').find("[type=presentation]").length < 5) {
+                $('#proposalForm .addPresentationButton').attr("disabled", false);
+            }
         }).on('click', '#c4pSave', function() {
             var form = $(this.parentElement),
                 formValidation = form.data('formValidation');
