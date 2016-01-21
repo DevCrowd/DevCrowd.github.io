@@ -104,9 +104,8 @@ $(document).ready(function() {
                                 proposition.speakers.push(result);
                                 objectsToRead--;
                             
-                                if (objectsToRead === 0) {
+                                if (objectsToRead === 0)
                                     callback(proposition);
-                                }
                             };
 
                             reader.readAsBinaryString(file);
@@ -114,9 +113,8 @@ $(document).ready(function() {
                             proposition.speakers.push(result);
                             objectsToRead--;
                             
-                            if (objectsToRead === 0) {
+                            if (objectsToRead === 0)
                                 callback(proposition);
-                            }
                         }
                     };
 
@@ -134,9 +132,8 @@ $(document).ready(function() {
                         proposition.presentations.push(result);
                         objectsToRead--;
                         
-                        if (objectsToRead === 0) {
+                        if (objectsToRead === 0)
                             callback(proposition);
-                        }
                     };
 
                     $.each(htmlPresentations, function(i, val) {convertPresentation(val);});
@@ -208,7 +205,6 @@ $(document).ready(function() {
                 .formValidation('addField', 'speaker[' + speakerIndex + '].name', nameValidators)
                 .formValidation('addField', 'speaker[' + speakerIndex + '].surname', surnameValidators)
                 .formValidation('addField', 'speaker[' + speakerIndex + '].email', emailValidators)
-                .formValidation('addField', 'speaker[' + speakerIndex + '].desc', speakerDescValidators)
                 .formValidation('addField', 'speaker[' + speakerIndex + '].size', selectionValidators);
         })
         .on('click', '.removeSpeakerButton', function() {
@@ -245,9 +241,8 @@ $(document).ready(function() {
                 .formValidation('addField', 'presentation[' + presentationIndex + '].desc', presentationDescValidators)
                 .formValidation('addField', 'presentation[' + presentationIndex + '].lang', selectionValidators);
 
-            if ($('#proposalForm').find("[type=presentation]").length >= 5) {
+            if ($('#proposalForm').find("[type=presentation]").length >= 5)
                 $('#proposalForm .addPresentationButton').attr("disabled", true);
-            }
         })
         .on('click', '.removePresentationButton', function() {
             var row  = $(this).parents('.form-group'),
@@ -260,18 +255,15 @@ $(document).ready(function() {
 
             row.remove();
 
-            if ($('#proposalForm').find("[type=presentation]").length < 5) {
+            if ($('#proposalForm').find("[type=presentation]").length < 5)
                 $('#proposalForm .addPresentationButton').attr("disabled", false);
-            }
         }).on('click', '#c4pSave', function() {
             var form = $(this.parentElement),
                 formValidation = form.data('formValidation');
             formValidation.validate();
 
-            if (formValidation.isValid()) {
-                //turn on spiner
+            if (formValidation.isValid())//turn on spiner
                 preapreDataAndSend(form.find("[type=speaker]"), form.find("[type=presentation]"));
-            }
 
             return false;
         });
