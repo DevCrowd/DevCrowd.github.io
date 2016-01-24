@@ -43,7 +43,7 @@ $(document).ready(function() {
                     message: 'Pole musi być wypełnione'
                 },
                 stringLength: {
-                    max: 2000,
+                    max: 500,
                     message: 'Za długie'
                 }
             }
@@ -54,7 +54,7 @@ $(document).ready(function() {
                     message: 'Pole musi być wypełnione'
                 },
                 stringLength: {
-                    max: 250,
+                    max: 80,
                     message: 'Za długie'
                 }
             }
@@ -148,7 +148,7 @@ $(document).ready(function() {
         send = function(data) {
             jQuery.ajax({
                 'type': 'POST',
-                'url': "http://localhost:8080/proposals",
+                'url': "http://superchicken-devcrowd.rhcloud.com/proposals",
                 'contentType': 'application/json',
                 'accept': 'application/json',
                 'data': JSON.stringify(data),
