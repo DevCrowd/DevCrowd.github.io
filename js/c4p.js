@@ -1,9 +1,10 @@
 $(document).ready(function(){
-    $("#myBtn").click(function(){
-        $("#myModal").modal();
+    $("#proposalBtn").click(function(){
+        $("#proposalModal").modal();
     });
-});
-$(document).ready(function() {
+    $("#failModalBtn").click(function(){
+        $("#failModal").modal('toggle');
+    });
     var nameValidators = {
             validators: {
                 notEmpty: {
@@ -154,10 +155,13 @@ $(document).ready(function() {
                 'data': JSON.stringify(data),
                 'dataType': 'json',
                 'success': function( data ) {
-                    //turn off spiner, give info of success
+                    $("#proposalModal").modal('toggle');
+                    $("#sucessModal").modal();
+                    $('#throbber').hide();
                 },
-                'failure': function( data ) {
-                    //turn off spiner, give info of failure
+                'error': function( data ) {
+                    $("#failModal").modal();
+                    $('#throbber').hide();
                 }
             });
         };
@@ -262,8 +266,10 @@ $(document).ready(function() {
                 formValidation = form.data('formValidation');
             formValidation.validate();
 
-            if (formValidation.isValid())//turn on spiner
+            if (formValidation.isValid()) {
+                $('#throbber').show();
                 preapreDataAndSend(form.find("[type=speaker]"), form.find("[type=presentation]"));
+            }
 
             return false;
         });
