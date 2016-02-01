@@ -30,7 +30,7 @@ $(document).ready(function(){
         speakerDescValidators = {
             validators: {
                 notEmpty: {
-                    message: 'Pole musi być wypełnione'
+                    message: 'Pole musi być wypełnione, max 500 znaków'
                 },
                 stringLength: {
                     max: 500,
@@ -41,7 +41,7 @@ $(document).ready(function(){
         presentationDescValidators = {
             validators: {
                 notEmpty: {
-                    message: 'Pole musi być wypełnione'
+                    message: 'Pole musi być wypełnione, max 500 znaków'
                 },
                 stringLength: {
                     max: 500,
@@ -52,7 +52,7 @@ $(document).ready(function(){
         presentationTitleValidators = {
             validators: {
                 notEmpty: {
-                    message: 'Pole musi być wypełnione'
+                    message: 'Pole musi być wypełnione, max 80 znaków'
                 },
                 stringLength: {
                     max: 80,
