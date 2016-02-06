@@ -58,6 +58,12 @@
         height: 100%;
         margin: 0 0;
     }
+    .red-label {
+        color: #FF0000;
+    }
+    .green-label {
+        color: #00AF00;
+    }
   </style>
 </head>
 
@@ -204,7 +210,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control" name="speaker[0].origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
                         </div>
-                        <button type="button" class="btn btn-default addSpeakerButton"><i class="fa fa-plus"></i> Kolejny prezenter</button>
+                        <button type="button" class="btn btn-default addSpeakerButton green-label"><i class="fa fa-plus"></i> Kolejny prezenter</button>
                     </div>
                     <div class="form-group hide" id="speakerTemplate">
                         <h4 class="text-center" style="color:#353230">Prezenter</h4>
@@ -239,7 +245,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control" name="origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
                         </div>
-                        <button type="button" class="btn btn-default removeSpeakerButton"><i class="fa fa-minus"></i> Usuń prezentera</button>
+                        <button type="button" class="btn btn-default removeSpeakerButton red-label"><i class="fa fa-minus"></i> Usuń prezentera</button>
                     </div>
                     <div class="form-group" type="presentation">
                         <h4 class="text-center" style="color:#353230">Prezentacja</h4>
@@ -258,7 +264,7 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-default addPresentationButton"><i class="fa fa-plus"></i> Kolejna prezentacja</button>
+                        <button type="button" class="btn btn-default addPresentationButton green-label"><i class="fa fa-plus"></i> Kolejna prezentacja</button>
                     </div>
                     <div class="form-group hide" id="presentationTemplate">
                         <h4 class="text-center" style="color:#353230">Prezentacja</h4>
@@ -277,7 +283,7 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-default removePresentationButton"><i class="fa fa-minus"></i> Usuń prezentację</button>
+                        <button type="button" class="btn btn-default removePresentationButton red-label"><i class="fa fa-minus"></i> Usuń prezentację</button>
                     </div>
                     
                     <button id="c4pSave" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
