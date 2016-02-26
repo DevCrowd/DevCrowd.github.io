@@ -149,7 +149,7 @@ $(document).ready(function(){
         send = function(data) {
             jQuery.ajax({
                 'type': 'POST',
-                'url': "http://superchicken-devcrowd.rhcloud.com/proposals",
+                'url': "http://chickentest-devcrowd.rhcloud.com/proposals",
                 'contentType': 'application/json',
                 'accept': 'application/json',
                 'data': JSON.stringify(data),
@@ -261,7 +261,8 @@ $(document).ready(function(){
 
             if ($('#proposalForm').find("[type=presentation]").length < 5)
                 $('#proposalForm .addPresentationButton').attr("disabled", false);
-        }).on('click', '#c4pSave', function() {
+        })
+        .on('click', '#c4pSave', function() {
             var form = $(this.parentElement),
                 formValidation = form.data('formValidation');
             formValidation.validate();
