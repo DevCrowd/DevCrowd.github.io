@@ -253,13 +253,13 @@
                     </div>
                 {{/exists}}
                 {{#exists description}}
-                    <p>Opis: {{description}}</p>
+                    <p style="white-space: pre;">Opis: {{description}}</p>
                 {{/exists}}
             {{/speakers}}
             <h2>Prezentacja</h2>
             {{#presentations}}
                 <p>Tytuł: {{title}}</p>
-                <p>Opis: {{description}}</p>
+                <p style="white-space: pre;">Opis: {{description}}</p>
             {{/presentations}}
             <br>
         {{/proposals}}
