@@ -134,7 +134,7 @@ function showPresentationDetails(id) {
     $('#throbber').show();
     jQuery.ajax({
         'type': 'GET',
-        'url': "http://chickentest-devcrowd.rhcloud.com/proposals/presentations/" + id,
+        'url': "http://chickentest-devcrowd.rhcloud.com/proposals/presentations/" + id + "?mode=1",
         'contentType': 'application/json',
         'accept': 'application/json',
         'success': function( data ) {
