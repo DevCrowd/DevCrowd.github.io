@@ -58,6 +58,16 @@
             height: 100%;
             margin: 0 0;
         }
+        .pres-separator:after {
+            border-bottom: 2px solid rgba(240, 95, 64, .4);
+            position: absolute;
+            content: "";
+            left: 25%;
+            height: 1px;
+            width: 50%;
+            padding-bottom: 25px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 
@@ -170,11 +180,11 @@
                                    </div>
                                 </div>
                                 <div style="color: #000000">
-                                    <h2>Zagłosuj na prezentacje</h2><br>
+                                    <h2>Zagłosuj na prezentacje</h2>
                                     <h4>max 5</h4><br>
                                     <div id="presentations"></div>
                                 </div>
-                                <div class=" col-lg-6 col-lg-offset-3 text-center">
+                                <div class="col-lg-6 col-lg-offset-3 text-center">
                                     <button id="registerSave" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
                                 </div>
                               </form>
@@ -234,32 +244,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/framework/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script id="presentation-template" type="text/x-handlebars-template">
+        <div style="border-top: 2px solid rgba(240, 95, 64, .4); margin-bottom: 15px; padding-top: 15px; border-radius: 10px;">
         {{#presentations}}
-            <div>
+            <div class="pres-separator">
                 <p style="cursor: help;" onclick="showPresentationDetails('{{id}}')">Tytuł: {{title}} </p>
                 <input type="checkbox" name="selectPresentation" value="{{id}}">
             </div>
             <br>
         {{/presentations}}
+        </div>
     </script>
     <script id="proposal-template" type="text/x-handlebars-template">
         {{#proposals}}
             <h2>Prelegenci</h2>
             {{#speakers}}
-                <h3>{{firstname}} {{lastname}}</h3>
-                {{#exists picture}}
-                    <div>
-                        <img style="max-width: 100%; max-height: 100%;" src="data:image/png;base64,{{picture}}"/>
-                    </div>
-                {{/exists}}
-                {{#exists description}}
-                    <p style="white-space: pre;">Opis: {{description}}</p>
-                {{/exists}}
+                <div>
+                    <h3 style="font-weight: bold;">{{firstname}} {{lastname}}</h3>
+                    {{#exists picture}}
+                        <div>
+                            <img style="max-width: 40%; max-height: 40%; border-radius: 50px; float: left;" src="data:image/png;base64,{{picture}}"/>
+                        </div>
+                    {{/exists}}
+                    {{#exists description}}
+                        <div>
+                            <p style="white-space: pre; padding-top: 25px; word-wrap: break-word;">{{description}}</p>
+                        </div>
+                    {{/exists}}
+                </div>
+                <br style="clear:both;"/>
             {{/speakers}}
             <h2>Prezentacja</h2>
             {{#presentations}}
-                <p>Tytuł: {{title}}</p>
-                <p style="white-space: pre;">Opis: {{description}}</p>
+                <div>
+                    <h4 style="font-weight: bold; opacity: .5;">Tytuł:</h4>
+                    <p>{{title}}</p>
+                    <h4 style="font-weight: bold; opacity: .5;">Opis:</h4>
+                    <p style="white-space: pre; word-wrap: break-word;">{{description}}</p>
+                </div>
             {{/presentations}}
             <br>
         {{/proposals}}
