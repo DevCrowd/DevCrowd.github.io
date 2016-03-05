@@ -262,12 +262,12 @@
                     <h3 style="font-weight: bold;">{{firstname}} {{lastname}}</h3>
                     {{#exists picture}}
                         <div>
-                            <img style="max-width: 40%; max-height: 40%; border-radius: 15px; float: left; box-shadow: 4px 4px 5px #888888;" src="data:image/png;base64,{{picture}}"/>
+                            <img style="max-width: 40%; max-height: 40%; margin-right: 10px; border-radius: 15px; float: left; box-shadow: 4px 4px 5px #888888;" src="data:image/png;base64,{{picture}}"/>
                         </div>
                     {{/exists}}
                     {{#exists description}}
                         <div>
-                            <p style="white-space: pre; padding-top: 25px; word-wrap: break-word;">{{description}}</p>
+                            <p style="word-wrap: break-word; padding-top: 25px; word-wrap: break-word;">{{description}}</p>
                         </div>
                     {{/exists}}
                 </div>
@@ -279,7 +279,7 @@
                     <h4 style="font-weight: bold; opacity: .5;">Tytuł:</h4>
                     <p>{{title}}</p>
                     <h4 style="font-weight: bold; opacity: .5;">Opis:</h4>
-                    <p style="white-space: pre; word-wrap: break-word;">{{description}}</p>
+                    <p style="word-wrap: break-word;">{{description}}</p>
                 </div>
             {{/presentations}}
             <br>

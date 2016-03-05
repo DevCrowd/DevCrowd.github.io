@@ -86,7 +86,7 @@ $(document).ready(function() {
 
     jQuery.ajax({
         'type': 'GET',
-        'url': "http://chickentest-devcrowd.rhcloud.com/presentations?mode=1",
+        'url': "http://superchicken-devcrowd.rhcloud.com/presentations?mode=1",
         'contentType': 'application/json',
         'accept': 'application/json',
         'success': function( data ) {
@@ -134,7 +134,7 @@ function showPresentationDetails(id) {
     $('#throbber').show();
     jQuery.ajax({
         'type': 'GET',
-        'url': "http://chickentest-devcrowd.rhcloud.com/proposals/presentations/" + id,
+        'url': "http://superchicken-devcrowd.rhcloud.com/proposals/presentations/" + id,
         'contentType': 'application/json',
         'accept': 'application/json',
         'success': function( data ) {
