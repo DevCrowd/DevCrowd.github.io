@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>Propozycje</title>
+    </head>
+    <body>
+        <input type="text" id="username-input" placeholder="name" />
+        <input type="password" id="passwd-input" placeholder="passwd" />
+        <button id="getem">Pobierz</button>
+
+        <div id="participants"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+        <script id="participants-template" type="text/x-handlebars-template">
+            <h2>Ogolem: {{participants.length}}</h2>
+            <table  border="1" style="width:100%">
+                <tr>
+                    <th>nazwisko</th>
+                    <th>imie</th>
+                    <th>email</th>
+                    <th>rozmiar</th>
+                    <th>skad</th>
+                </tr>
+
+                {{#participants}}
+                <tr>
+                    <td>{{lastname}}</td>
+                    <td>{{firstname}}</td>
+                    <td>{{email}}</td>
+                    <td>{{teeSize}}</td>
+                    <td>{{origin}}</td>
+                </tr>
+                {{/participants}}
+            </table>
+        </script>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/participants.js"></script>
+    </body>
+</html>
