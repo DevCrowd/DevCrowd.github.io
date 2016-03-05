@@ -58,6 +58,9 @@
             height: 100%;
             margin: 0 0;
         }
+        .pres-separator {
+            padding-bottom: 5px;
+        }
         .pres-separator:after {
             border-bottom: 2px solid rgba(240, 95, 64, .4);
             position: absolute;
@@ -65,7 +68,7 @@
             left: 25%;
             height: 1px;
             width: 50%;
-            padding-bottom: 25px;
+            padding-bottom: 10px;
             border-radius: 20px;
         }
     </style>
@@ -247,8 +250,8 @@
         <div style="border-top: 2px solid rgba(240, 95, 64, .4); margin-bottom: 15px; padding-top: 15px; border-radius: 10px;">
         {{#presentations}}
             <div class="pres-separator">
-                <p style="cursor: help;" onclick="showPresentationDetails('{{id}}')">Tytuł: {{title}} </p>
-                <input type="checkbox" name="selectPresentation" value="{{id}}">
+                <p style="cursor: help; margin-bottom: 10px;" onclick="showPresentationDetails('{{id}}')">Tytuł: {{title}} </p>
+                <input type="checkbox" name="selectPresentation" value="{{id}}" style="margin-bottom: 10px; display: block; width: 100%;" >
             </div>
             <br>
         {{/presentations}}
