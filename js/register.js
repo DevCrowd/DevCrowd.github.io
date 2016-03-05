@@ -43,7 +43,7 @@ $(document).ready(function() {
 
             jQuery.ajax({
                 'type': 'POST',
-                'url': "http://chickentest-devcrowd.rhcloud.com/participants",
+                'url': "http://superchicken-devcrowd.rhcloud.com/participants",
                 'contentType': 'application/json',
                 'accept': 'application/json',
                 'data': JSON.stringify(participant),
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
                     jQuery.ajax({
                         'type': 'POST',
-                        'url': "http://chickentest-devcrowd.rhcloud.com/participants/" + data.id + "/votes",
+                        'url': "http://superchicken-devcrowd.rhcloud.com/participants/" + data.id + "/votes",
                         'contentType': 'application/json',
                         'accept': 'application/json',
                         'data': JSON.stringify(presentations),
