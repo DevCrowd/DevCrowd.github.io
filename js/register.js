@@ -31,7 +31,7 @@ $(document).ready(function() {
                 }
             }
         },
-        preapreDataAndSend = function(htmlParticipants, htmlSelectedPresentations) {
+        preapreDataAndSend = function(htmlParticipants) {
             var participant = {},
                 jQParticipant = $(htmlParticipants[0]);
 
@@ -43,30 +43,14 @@ $(document).ready(function() {
 
             jQuery.ajax({
                 'type': 'POST',
-                'url': "http://superchicken-devcrowd.rhcloud.com/participants",
+                'url': "http://chickentest-devcrowd.rhcloud.com/participants",
                 'contentType': 'application/json',
                 'accept': 'application/json',
                 'data': JSON.stringify(participant),
                 'dataType': 'json',
                 'success': function( data ) {
-                    var presentations = [];
-                    $.each(htmlSelectedPresentations, function(i, val) {presentations.push($(val).attr('value'))});
-
-                    jQuery.ajax({
-                        'type': 'POST',
-                        'url': "http://superchicken-devcrowd.rhcloud.com/participants/" + data.id + "/votes",
-                        'contentType': 'application/json',
-                        'accept': 'application/json',
-                        'data': JSON.stringify(presentations),
-                        'success': function( data ) {
-                            $('#throbber').hide();
-                            window.location = "regsuc.html#greatSuccess";
-                        },
-                        'error': function( data ) {
-                            $("#failModal").modal();
-                            $('#throbber').hide();
-                        }
-                    });
+                    $('#throbber').hide();
+                    window.location = "regsuc.html#greatSuccess";
                 },
                 'error': function( data ) {
                     $("#failModal").modal();
@@ -74,33 +58,7 @@ $(document).ready(function() {
                 }
             });
         };
-    $('#throbber').show();
-    Handlebars.registerHelper('exists', function(variable, options) {
-        if (typeof variable !== 'undefined') {
-            return options.fn(this);
-        } else {
-            return options.inverse(this);
-        }
-    });
-    var template = Handlebars.compile($("#presentation-template").html());
 
-    jQuery.ajax({
-        'type': 'GET',
-        'url': "http://superchicken-devcrowd.rhcloud.com/presentations?mode=1",
-        'contentType': 'application/json',
-        'accept': 'application/json',
-        'success': function( data ) {
-            $('#throbber').hide();
-            $("#presentations").html(template({presentations: data}));
-            $("[name=selectPresentation]").on('change', function() {
-                if ($("[name=selectPresentation]:checked").length >= 5) {
-                    $("[name=selectPresentation]:not(:checked)").attr('disabled', true);
-                } else {
-                    $("[name=selectPresentation]:not(:checked)").attr('disabled', false);
-                }
-            });
-        }
-    });
     $('#proposalForm')
         .formValidation({
             framework: 'bootstrap',
@@ -120,27 +78,11 @@ $(document).ready(function() {
                 formValidation = form.data('formValidation');
             formValidation.validate();
 
-            if (formValidation.isValid() && $("[name=selectPresentation]:checked").length <= 5) {
+            if (formValidation.isValid()) {
                 $('#throbber').show();
-                preapreDataAndSend(form.find("[type=participant]"), form.find("[name=selectPresentation]:checked"));
+                preapreDataAndSend(form.find("[type=participant]"));
             }
 
             return false;
         });
 });
-var presentationTemplate = Handlebars.compile($("#proposal-template").html());
-
-function showPresentationDetails(id) {
-    $('#throbber').show();
-    jQuery.ajax({
-        'type': 'GET',
-        'url': "http://superchicken-devcrowd.rhcloud.com/proposals/presentations/" + id,
-        'contentType': 'application/json',
-        'accept': 'application/json',
-        'success': function( data ) {
-            $('#throbber').hide();
-            $("#fullPresentation").html(presentationTemplate({proposals: data}));
-            $("#presentationModal").modal('toggle');
-        }
-    });
-}

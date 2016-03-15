@@ -171,23 +171,6 @@
                                     </div>
                                 </div>
 
-                                <div class="modal fade" id="presentationModal" role="dialog">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            </div>
-                                            <div class="modal-body" >
-                                                <div id="fullPresentation" class="modal-body" style="color: #000000;"></div>
-                                            </div>
-                                        </div>
-                                   </div>
-                                </div>
-                                <div style="color: #000000">
-                                    <h2>Zagłosuj na prezentacje</h2>
-                                    <h4>max 5</h4><br>
-                                    <div id="presentations"></div>
-                                </div>
                                 <div class="col-lg-6 col-lg-offset-3 text-center">
                                     <button id="registerSave" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
                                 </div>
@@ -246,49 +229,7 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/formValidation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/framework/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-    <script id="presentation-template" type="text/x-handlebars-template">
-        <div style="border-top: 2px solid rgba(240, 95, 64, .4); margin-bottom: 15px; padding-top: 15px; border-radius: 10px;">
-        {{#presentations}}
-            <div class="pres-separator">
-                <p style="cursor: help; margin-bottom: 10px;" onclick="showPresentationDetails('{{id}}')">Tytuł: {{title}} </p>
-                <input type="checkbox" name="selectPresentation" value="{{id}}" style="margin-bottom: 10px; display: block; width: 100%;" >
-            </div>
-            <br>
-        {{/presentations}}
-        </div>
-    </script>
-    <script id="proposal-template" type="text/x-handlebars-template">
-        {{#proposals}}
-            <h2>Prelegenci</h2>
-            {{#speakers}}
-                <div>
-                    <h3 style="font-weight: bold;">{{firstname}} {{lastname}}</h3>
-                    {{#exists picture}}
-                        <div>
-                            <img style="max-width: 40%; max-height: 40%; margin-right: 10px; border-radius: 15px; float: left; box-shadow: 4px 4px 5px #888888;" src="data:image/png;base64,{{picture}}"/>
-                        </div>
-                    {{/exists}}
-                    {{#exists description}}
-                        <div>
-                            <p style="word-wrap: break-word; padding-top: 25px; word-wrap: break-word;">{{description}}</p>
-                        </div>
-                    {{/exists}}
-                </div>
-                <br style="clear:both;"/>
-            {{/speakers}}
-            <h2>Prezentacja</h2>
-            {{#presentations}}
-                <div>
-                    <h4 style="font-weight: bold; opacity: .5;">Tytuł:</h4>
-                    <p>{{title}}</p>
-                    <h4 style="font-weight: bold; opacity: .5;">Opis:</h4>
-                    <p style="word-wrap: break-word;">{{description}}</p>
-                </div>
-            {{/presentations}}
-            <br>
-        {{/proposals}}
-    </script>
+
     <script src="js/register.js"></script>
 </body>
 
