@@ -64,6 +64,30 @@
     .green-label {
         color: #00AF00;
     }
+    .agenda {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .agenda th {
+        text-align: center;
+        padding: 10px;
+        font-size: 19px;
+    }
+    .agenda td {
+        border-width: 2px;
+        border-color: #f05f40;
+        border-style: solid;
+        padding: 10px;
+    }
+    .agenda a {
+        color:  #FFF;
+    }
+    .agenda a:hover {
+        color: #f05f40;
+    }
+    .agenda-time {
+        font-size: 17px;
+    }
   </style>
 </head>
 
@@ -96,11 +120,11 @@
                     <li>
                         <a class="page-scroll" href="#location">Lokalizacja</a>
                     </li>
-                    <!--<li>
-                        <a class="page-scroll" href="#call4">Call4Papers</a>
-                    </li>-->
                     <li>
                         <a class="page-scroll" href="#registrations">Rejestracja</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#agenda">Agenda</a>
                     </li>
 					<li>
                         <a class="page-scroll" href="#sponsors">Sponsorzy</a>
@@ -162,7 +186,7 @@
         <div id="map"></div>
 
 
-    <section class="bg-dark" id="registrations">
+    <section class="bg-primary" id="registrations">
         <div class="col-lg-12 text-center">
             <h2 class="section-heading">Rejestracja</h2>
             <hr class="light">
@@ -170,6 +194,102 @@
         </div>
         <div class="text-center">
             <button type="button" class="btn btn-default btn-lg" onclick="location.href='register.html#registrations'">Przyjdę!</button>
+        </div>
+    </section>
+    <section class="bg-dark" id="agenda">
+        <div class="modal fade" id="presentationModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body" >
+                        <div id="fullPresentation" class="modal-body" style="color: #000000;text-align: center;"></div>
+                    </div>
+                </div>
+           </div>
+        </div>
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Agenda</h2>
+            <hr class="light">
+        </div>
+        <div class="text-center">
+            <table class="agenda">
+                <tr>
+                    <th class="tg-yw4l"></th>
+                    <th class="tg-yw4l">Sala 126</th>
+                    <th class="tg-yw4l">Sala 227</th>
+                    <th class="tg-yw4l">Sala 121</th>
+                </tr>
+                <tr>
+                    <td class="agenda-time">8:30-9:00</td>
+                    <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Rejestracja</td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">9:00-9:25</td>
+                    <td class="tg-yw4l" style="font-weight: bold;font-size: 16px;">Rozpoczęcie</td>
+                    <td class="tg-yw4l" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">9:25-10:15</td>
+                    <td class="tg-yw4l">TBD</td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('01ebe25e-4127-4c01-9f19-3a2a432a5c06')">Bartłomiej Kuczyński <br> Dlaczego mam płacić za twoją licencję?</a></td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('c19055d6-33fa-4bb3-a93e-1bc038286a06')">Michał Lewandowski <br>  Retrospektywy</a></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">10:30-11:20</td>
+                    <td class="tg-yw4l">Piotr Tobolski <br>  Programowanie w Swift okiem Java developera</td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('71e838ef-b3ba-4aa9-93b7-0f3bdfa6b8fd')">Marcin Warczygłowa <br> Real-time Web Applications with Websockets and Vert.x</a></td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('a682c1ef-0fb8-4506-822b-283cb8362a3a')">Marcin Bazydło <br>  Service-Status: Very Polite Service Monitoring</a></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">11:35-12:25</td>
+                    <td class="tg-yw4l">Bartosz Michalkiewicz <br>   Introduction to reactive programming with Java and Scala.</td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('8db3c151-6417-49a0-b35a-b24730725972')">Tomasz Kalkosiński <br>  Jak przetestować prawdziwy system?</a></td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('dbcd1d27-f74a-42de-8a40-6d59497a041a')">Marcin Stachniuk <br>  Szybkie wyszukiwanie pełnotekstowe z ElasticSearch'e­m</a></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">12:40-13:30</td>
+                    <td class="tg-yw4l">Artur Chamro <br>  Co nowego w Railsach 5?</td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('e97c49bd-12e5-457d-ba6f-1f9e20f8c1b4')">Bartłomiej Kuczyński <br>  Dwa lata z "funkcyjną" Javą 8</a></td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('55a537ad-d9f8-47a9-b440-5ba102ed9c5a')">Grzegorz Piwowarek <br>  Java Wars VIII: The Function Awakens</a></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">13:30-14:20</td>
+                    <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Obiad</td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">14:20-15:10</td>
+                    <td class="tg-yw4l">TBD</td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('f85b265e-6545-4cff-8313-e6ac0d241371')">Tomasz Ducin <br> JSON Schema: validate, generate, mock & automate</a></td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('f5652f5b-13b4-427a-8c98-4992e13bc1b1')">Grzegorz Godlewski <br>  Wydajne połączenia sieciowe</a></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">15:25-16:15</td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('db6b5110-7120-40d9-81a2-2f0a9c0aed81')">Dominik Przybysz <br>  Java 9</td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('af454197-1dcf-4730-ba46-46143b360f62')">Paweł Spychalski <br>  Po godzinach: drony dla programisty</a></td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('69e75636-e0e3-419c-aab9-8d9c15a03107')">Szymon Pacanowski <br>  Dropwizard vs Spring Boot - lightweight fight</a></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">16:30-17:20</td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('c24dfb1c-4fea-4e98-807d-0661c785b96e')">Tomasz Ducin <br>  JavaScript + Java = TypeScript</a></td>
+                    <td class="tg-yw4l"><a onclick="showPresentationDetails('3ef725b0-fdc1-4fb4-84e8-891be1daf320')">Tomasz Dziurko <br>  Brzydka Pani od HR radzi, czyli 1011 błędów, które popełniają programiści</a></td>
+                    <td class="tg-yw4l"></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">17:20</td>
+                    <td class="tg-yw4l" style="font-weight: bold;font-size: 16px;">Zakończenie</td>
+                    <td class="tg-yw4l"></td>
+                    <td class="tg-yw4l"></td>
+                </tr>
+                <tr>
+                    <td class="tg-yw4l" colspan="4"></td>
+                </tr>
+                <tr>
+                    <td class="agenda-time">18:30</td>
+                    <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Afterparty</td>
+                </tr>
+            </table>
         </div>
     </section>
     
@@ -366,6 +486,38 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/formValidation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/framework/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script id="proposal-template" type="text/x-handlebars-template">
+        {{#proposals}}
+            <h2>Prelegenci</h2>
+            {{#speakers}}
+                <div>
+                    <h3 style="font-weight: bold;">{{firstname}} {{lastname}}</h3>
+                    {{#exists picture}}
+                        <div>
+                            <img style="max-width: 40%; max-height: 40%; margin-right: 10px; border-radius: 15px; float: left; box-shadow: 4px 4px 5px #888888;" src="data:image/png;base64,{{picture}}"/>
+                        </div>
+                    {{/exists}}
+                    {{#exists description}}
+                        <div>
+                            <p style="word-wrap: break-word; padding-top: 25px; word-wrap: break-word;">{{description}}</p>
+                        </div>
+                    {{/exists}}
+                </div>
+                <br style="clear:both;"/>
+            {{/speakers}}
+            <h2>Prezentacja</h2>
+            {{#presentations}}
+                <div>
+                    <h4 style="font-weight: bold; opacity: .5;">Tytuł:</h4>
+                    <p>{{title}}</p>
+                    <h4 style="font-weight: bold; opacity: .5;">Opis:</h4>
+                    <p style="word-wrap: break-word;">{{description}}</p>
+                </div>
+            {{/presentations}}
+            <br>
+        {{/proposals}}
+    </script>
     <script src="js/c4p.js"></script>
 </body>
 

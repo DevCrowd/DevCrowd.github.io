@@ -275,3 +275,27 @@ $(document).ready(function(){
             return false;
         });
 });
+
+Handlebars.registerHelper('exists', function(variable, options) {
+    if (typeof variable !== 'undefined') {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+var presentationTemplate = Handlebars.compile($("#proposal-template").html());
+ 
+function showPresentationDetails(id) {
+    $('#throbber').show();
+    jQuery.ajax({
+        'type': 'GET',
+        'url': "http://superchicken-devcrowd.rhcloud.com/proposals/presentations/" + id,
+        'contentType': 'application/json',
+        'accept': 'application/json',
+        'success': function( data ) {
+            $('#throbber').hide();
+            $("#fullPresentation").html(presentationTemplate({proposals: data}));
+            $("#presentationModal").modal('toggle');
+        }
+    });
+}
