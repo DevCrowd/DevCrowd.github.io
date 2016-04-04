@@ -84,6 +84,7 @@
     }
     .agenda a:hover {
         color: #f05f40;
+        cursor: help;
     }
     .agenda-time {
         font-size: 17px;
@@ -500,7 +501,7 @@
                     {{/exists}}
                     {{#exists description}}
                         <div>
-                            <p style="word-wrap: break-word; padding-top: 25px; word-wrap: break-word;">{{description}}</p>
+                            <p style="word-wrap: break-word; padding-top: 25px; word-wrap: break-word; white-space: pre-line;">{{description}}</p>
                         </div>
                     {{/exists}}
                 </div>
@@ -512,7 +513,7 @@
                     <h4 style="font-weight: bold; opacity: .5;">Tytuł:</h4>
                     <p>{{title}}</p>
                     <h4 style="font-weight: bold; opacity: .5;">Opis:</h4>
-                    <p style="word-wrap: break-word;">{{description}}</p>
+                    <p style="word-wrap: break-word; white-space: pre-line;">{{description}}</p>
                 </div>
             {{/presentations}}
             <br>
