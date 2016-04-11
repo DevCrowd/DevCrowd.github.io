@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DevCrowd">
+    <meta name="keywords" content="konferencja, DevCrowd">
+
+    <title>DevCrowd</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/css/formValidation.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .modal-header, .close {
+            background-color: #f05f40;
+            color:white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+        .throbber {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .glass {
+            z-index: 10000;
+            position: fixed;
+            background-color: #353230;
+            opacity: 0.8;
+            width: 100%;
+            height: 100%;
+            margin: 0 0;
+        }
+        .pres-separator {
+            padding-bottom: 5px;
+        }
+        .pres-separator:after {
+            border-bottom: 2px solid rgba(240, 95, 64, .4);
+            position: absolute;
+            content: "";
+            left: 25%;
+            height: 1px;
+            width: 50%;
+            padding-bottom: 10px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div id="throbber" style="display: none;" class="glass">
+        <img src="img/throbber.gif" class="throbber">
+    </div>
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="index.html#navbarD">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">DevCrowd</a>
+            </div>
+
+            <div class="collapse navbar-collapse nav navbar-nav">
+                <img class="navimg" src="img/dukenav.png">
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarD">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="index.html#about">O Devcrowd</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#location">Lokalizacja</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#call4">Call4Papers</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#registrations">Rejestracja</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#contact">Kontakt</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-block btn-social btn-twitter" href="https://twitter.com/devcrowdpl" target="_blank">
+                        <span class="fa fa-twitter fa-lg"></span></a>
+                    </li>
+                    <li>
+                        <a class="btn btn-block btn-social btn-facebook" href="http://www.facebook.com/pages/Dev-Crowd/176202629066350" target="_blank">
+                        <span class="fa fa-facebook fa-lg"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>DevCrowd</h1>
+                <hr>
+                <p>Szczecin, 23 kwietnia 2016</p>
+                <p><a href="index.html#about" class="btn btn-primary btn-xl page-scroll">O DevCrowd</a></p>
+            </div>
+        </div>
+    </header>
+    <section class="bg-dark text-center" id="confirmation">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Potwierdzenie</h2>
+            <hr class="light">
+            <h4 class="space">Naciśnij przycisk z preferowanym typem posiłku</h4>
+        </div>
+        <div class="text-center">
+            <button onclick="confirm('NORMAL')" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Przyjdę - Chcę mięso</button>
+            <button onclick="confirm('VEG')" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Przyjdę - Chcę bez mięsa</button>
+            <button onclick="confirm('NONE')" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Przyjdę - Nie chce posiłku</button>
+        </div>
+    </section>
+        <section id="sponsors">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Sponsorzy / Partnerzy</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        <div class="row">
+                <div class="col-lg-12 text-center space"> 
+                    <h4 class="spacesm">Sponsor Platynowy</h4>
+                        <div class="col-lg-12 placeholder">
+                            <a href="http://www.ncdc.eu/" target="_blank"><img src="img/NCDC.png" alt="NCDC"></a>
+                        </div>
+                </div>    
+        </div>
+            <div class="row">
+                <div class="col-lg-12 text-center space"> 
+                    <h4 class="spacesm">Sponsorzy Złoci</h4>
+                        <div class="container">
+                            <div class="row spacesm">
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://blstream.com/" target="_blank"><img src="img/bls_logo_scaled.png" alt="BLStream"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://consileon.pl/" target="_blank"><img src="img/consileon.jpg" alt="Consileon"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://itkontrakt.pl/" target="_blank"><img src="img/itkontrakt.png" alt="itKONTRAKT"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://www.mobica.com/" target="_blank"><img src="img/mobica.png" alt="mobica"></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 placeholder">
+                                    <a href="http://www.sapiens.com/" target="_blank"><img src="img/sapiens.jpg" alt="Sapiens"></a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h4 class="spacesm">Partnerzy</h4>
+                        <div class="container">
+                            <div class="row spacesm">
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://osworld.pl/" target="_blank"><img src="img/osworld.png" alt="OSWorld"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://crossweb.pl/" target="_blank"><img src="img/crossweb.png" alt="Crossweb"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://klaster.it/" target="_blank"><img src="img/logo_klasterIT.png" alt="KlasterIT"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://www.technopark-pomerania.pl/" target="_blank"><img src="img/technopark.png" alt="Technopark Pomerania"></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://wi.zut.edu.pl/" target="_blank"><img src="img/WI.png" alt="Wydział Informatyki"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12 placeholder">
+                                    <a href="http://infoludek.pl/" target="_blank"><img class="infoludek" src="img/infoludek.png" alt="Infoludek"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12">
+                                    <a href="https://www.tidiochat.com/" target="_blank"><img src="img/tidio.png" alt="Tidio"></a>
+                                </div>
+                                <div class="col-lg-3 col-sm-12">
+                                    <a href="http://szjug.pl/" target="_blank"><img src="img/szjug.png" alt="Szczecin JUG"></a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="failModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <h4><span class="glyphicon glyphicon-remove-sign close" data-dismiss="modal"></span> Ajajaj !</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <p style="color: black;">Wszystko poszło nie tak jak powinno !<br> Spróbuj za chwilę.<br>Jak nadal będzie ała to wyłącz blokowanie wysyłania Location header'a lub napisz na info@devcrowd.pl</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="failModalBtn" type="button" class="btn btn-failure btn-block"><span class="close" data-dismiss="modal"></span> OK</button>
+                </div>
+            </div>
+       </div>
+    </div>
+
+    <div id="contact">
+        <div class="container foot">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Kontakt</h2>
+                    <hr class="primary">
+                    <p>Jeżeli masz jakieś pytania napisz do nas</p>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:info@devcrowd.pl">info@devcrowd.pl</a></p>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/formValidation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/framework/bootstrap.min.js"></script>
+
+    <script src="js/register.js"></script>
+</body>
+
+</html>
