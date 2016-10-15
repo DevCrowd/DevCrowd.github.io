@@ -1,0 +1,71 @@
+.modal-header, .close {
+    background-color: #f05f40;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+.throbber {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.glass {
+    z-index: 10000;
+    position: fixed;
+    background-color: #353230;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+}
+.red-label {
+    color: #FF0000;
+}
+.green-label {
+    color: #00AF00;
+}
+.agenda {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.agenda th {
+    text-align: center;
+    padding: 10px;
+    font-size: 19px;
+}
+.agenda td {
+    border-width: 2px;
+    border-color: #f05f40;
+    border-style: solid;
+    padding: 10px;
+}
+.agenda a {
+    color:  #FFF;
+}
+.agenda a:hover {
+    color: #f05f40;
+    cursor: help;
+}
+.agenda-time {
+    font-size: 17px;
+}
+.modal-header, .close {
+    background-color: #f05f40;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+.pres-separator {
+    padding-bottom: 5px;
+}
+.pres-separator:after {
+    border-bottom: 2px solid rgba(240, 95, 64, .4);
+    position: absolute;
+    content: "";
+    left: 25%;
+    height: 1px;
+    width: 50%;
+    padding-bottom: 10px;
+    border-radius: 20px;
+}
