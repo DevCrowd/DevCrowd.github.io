@@ -24,7 +24,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
-    
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
@@ -112,7 +112,7 @@
             <div class="collapse navbar-collapse nav navbar-nav">
                 <img class="navimg" src="img/dukenav.png">
             </div>
-            
+
             <div class="collapse navbar-collapse" id="navbarD">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -127,7 +127,7 @@
 					<li>
                         <a class="page-scroll" href="#sponsors">Sponsorzy</a>
                     </li>
-                    
+
                     <li>
                         <a class="page-scroll" href="#contact">Kontakt</a>
                     </li>
@@ -149,7 +149,7 @@
             <div class="header-content-inner">
                 <h1>DevCrowd</h1>
                 <hr>
-                <p>Szczecin, 23 kwietnia 2016</p>
+                <p>Szczecin, 22 kwietnia 2017</p>
                 <p><a href="#about" class="btn btn-primary btn-xl page-scroll">O DevCrowd</a></p>
             </div>
         </div>
@@ -162,14 +162,14 @@
                     <h2 class="section-heading">O DevCrowd</h2>
                     <hr class="light">
                     <p>Otwarta, bezpłatna szczecińska konferencja DevCrowd - dla programistów JAVA</br>i innych specjalistów IT</p>
-                    <p class="text-faded">W edycji 2016 znowu pobiliście rekord frekwencji – 230 uczestników!</br>
-                    Wystąpienia były wygłaszane w 3 salach równocześnie,</br>
-                    dzięki temu wybierać mogliście spośród 21 prezentacji.</p>
+                    <!--<p class="text-faded">W edycji 2016 znowu pobiliście rekord frekwencji – 230 uczestników!</br>-->
+                    <!--Wystąpienia były wygłaszane w 3 salach równocześnie,</br>-->
+                    <!--dzięki temu wybierać mogliście spośród 21 prezentacji.</p>-->
                 </div>
             </div>
         </div>
     </section>
-    
+
         <div class="container location" id="location">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -179,105 +179,105 @@
                     <br />Budynek nr 2<br />ul. Żołnierska 52<br />Szczecin</p>
                 </div>
             </div>
-        </div>   
+        </div>
         <div id="map"></div>
-    <section class="bg-dark" id="agenda">
-        <div class="modal fade" id="presentationModal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body" >
-                        <div id="fullPresentation" class="modal-body" style="color: #000000;text-align: center;"></div>
-                    </div>
-                </div>
-           </div>
-        </div>
-        <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Agenda</h2>
-            <hr class="light">
-        </div>
-        <div class="text-center">
-            <table class="agenda">
-                <tr>
-                    <th class="tg-yw4l"></th>
-                    <th class="tg-yw4l">Sala 126</th>
-                    <th class="tg-yw4l">Sala 227</th>
-                    <th class="tg-yw4l">Sala 121</th>
-                </tr>
-                <tr>
-                    <td class="agenda-time">8:30-9:00</td>
-                    <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Rejestracja</td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">9:00-9:25</td>
-                    <td class="tg-yw4l" style="font-weight: bold;font-size: 16px;">Rozpoczęcie</td>
-                    <td class="tg-yw4l" colspan="2"></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">9:25-10:15</td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('17a42ed1-f6f1-47ec-83bc-9179160c4e74')">Bartosz Kuszak <br> Testy Obciążeniowe nie tylko w praktyce</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('01ebe25e-4127-4c01-9f19-3a2a432a5c06')">Bartłomiej Kuczyński <br> Dlaczego mam płacić za twoją licencję?</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('c19055d6-33fa-4bb3-a93e-1bc038286a06')">Michał Lewandowski <br>  Retrospektywy</a></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">10:30-11:20</td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('1d1efb1a-c566-4f92-b6df-bed1d847970c')">Piotr Tobolski <br>  Programowanie w Swift okiem Java developera</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('71e838ef-b3ba-4aa9-93b7-0f3bdfa6b8fd')">Marcin Warczygłowa <br> Real-time Web Applications with Websockets and Vert.x</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('a682c1ef-0fb8-4506-822b-283cb8362a3a')">Marcin Bazydło <br>  Service-Status: Very Polite Service Monitoring</a></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">11:35-12:25</td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('10976462-1f4f-4c9c-9de1-bf39742bfede')">Bartosz Michalkiewicz <br>   Reactive systems with Scala(Akka)</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('8db3c151-6417-49a0-b35a-b24730725972')">Tomasz Kalkosiński <br>  Jak przetestować prawdziwy system?</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('dbcd1d27-f74a-42de-8a40-6d59497a041a')">Marcin Stachniuk <br>  Szybkie wyszukiwanie pełnotekstowe z ElasticSearch'e­m</a></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">12:40-13:30</td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('06a41208-eb42-4c65-ac69-6927479a7b1f')">Artur Chmaro <br>  Co nowego w Railsach 5?</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('e97c49bd-12e5-457d-ba6f-1f9e20f8c1b4')">Bartłomiej Kuczyński <br>  Dwa lata z "funkcyjną" Javą 8</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('55a537ad-d9f8-47a9-b440-5ba102ed9c5a')">Grzegorz Piwowarek <br>  Java Wars VIII: The Function Awakens</a></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">13:30-14:20</td>
-                    <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Obiad</td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">14:20-15:10</td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('00ad5c98-3f84-45e9-8079-9c96470b4f56')">Hubert Pietruszewski <br> Kto będzie używał mojej aplikacji? Development z myślą o przyszłych wdrożeniach.</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('f85b265e-6545-4cff-8313-e6ac0d241371')">Tomasz Ducin <br> JSON Schema: validate, generate, mock & automate</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('f5652f5b-13b4-427a-8c98-4992e13bc1b1')">Grzegorz Godlewski <br>  Wydajne połączenia sieciowe</a></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">15:25-16:15</td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('db6b5110-7120-40d9-81a2-2f0a9c0aed81')">Dominik Przybysz <br>  Java 9</td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('af454197-1dcf-4730-ba46-46143b360f62')">Paweł Spychalski <br>  Po godzinach: drony dla programisty</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('69e75636-e0e3-419c-aab9-8d9c15a03107')">Szymon Pacanowski <br>  Dropwizard vs Spring Boot - lightweight fight</a></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">16:30-17:20</td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('c24dfb1c-4fea-4e98-807d-0661c785b96e')">Tomasz Ducin <br>  JavaScript + Java = TypeScript</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('3ef725b0-fdc1-4fb4-84e8-891be1daf320')">Tomasz Dziurko <br>  Brzydka Pani od HR radzi, czyli 1011 błędów, które popełniają programiści</a></td>
-                    <td class="tg-yw4l"><a onclick="showPresentationDetails('29ccfaae-7435-40de-8d17-b1c0d11e4ea3')">Tomasz Andrzejczuk <br> Od przybytku głowa nie boli</a></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">17:20</td>
-                    <td class="tg-yw4l" style="font-weight: bold;font-size: 16px;">Zakończenie</td>
-                    <td class="tg-yw4l"></td>
-                    <td class="tg-yw4l"></td>
-                </tr>
-                <tr>
-                    <td class="tg-yw4l" colspan="4"></td>
-                </tr>
-                <tr>
-                    <td class="agenda-time">18:30</td>
-                    <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Afterparty</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-    
+    <!--<section class="bg-dark" id="agenda">-->
+        <!--<div class="modal fade" id="presentationModal" role="dialog">-->
+            <!--<div class="modal-dialog">-->
+                <!--<div class="modal-content">-->
+                    <!--<div class="modal-header">-->
+                        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body" >-->
+                        <!--<div id="fullPresentation" class="modal-body" style="color: #000000;text-align: center;"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+           <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-lg-12 text-center">-->
+            <!--<h2 class="section-heading">Agenda DevCrowd 2017 już niebawem!</h2>-->
+            <!--<hr class="light">-->
+        <!--</div>-->
+        <!--<div class="text-center">-->
+            <!--<table class="agenda">-->
+                <!--<tr>-->
+                    <!--<th class="tg-yw4l"></th>-->
+                    <!--<th class="tg-yw4l">Sala 126</th>-->
+                    <!--<th class="tg-yw4l">Sala 227</th>-->
+                    <!--<th class="tg-yw4l">Sala 121</th>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">8:30-9:00</td>-->
+                    <!--<td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Rejestracja</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">9:00-9:25</td>-->
+                    <!--<td class="tg-yw4l" style="font-weight: bold;font-size: 16px;">Rozpoczęcie</td>-->
+                    <!--<td class="tg-yw4l" colspan="2"></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">9:25-10:15</td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('17a42ed1-f6f1-47ec-83bc-9179160c4e74')">Bartosz Kuszak <br> Testy Obciążeniowe nie tylko w praktyce</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('01ebe25e-4127-4c01-9f19-3a2a432a5c06')">Bartłomiej Kuczyński <br> Dlaczego mam płacić za twoją licencję?</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('c19055d6-33fa-4bb3-a93e-1bc038286a06')">Michał Lewandowski <br>  Retrospektywy</a></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">10:30-11:20</td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('1d1efb1a-c566-4f92-b6df-bed1d847970c')">Piotr Tobolski <br>  Programowanie w Swift okiem Java developera</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('71e838ef-b3ba-4aa9-93b7-0f3bdfa6b8fd')">Marcin Warczygłowa <br> Real-time Web Applications with Websockets and Vert.x</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('a682c1ef-0fb8-4506-822b-283cb8362a3a')">Marcin Bazydło <br>  Service-Status: Very Polite Service Monitoring</a></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">11:35-12:25</td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('10976462-1f4f-4c9c-9de1-bf39742bfede')">Bartosz Michalkiewicz <br>   Reactive systems with Scala(Akka)</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('8db3c151-6417-49a0-b35a-b24730725972')">Tomasz Kalkosiński <br>  Jak przetestować prawdziwy system?</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('dbcd1d27-f74a-42de-8a40-6d59497a041a')">Marcin Stachniuk <br>  Szybkie wyszukiwanie pełnotekstowe z ElasticSearch'e­m</a></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">12:40-13:30</td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('06a41208-eb42-4c65-ac69-6927479a7b1f')">Artur Chmaro <br>  Co nowego w Railsach 5?</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('e97c49bd-12e5-457d-ba6f-1f9e20f8c1b4')">Bartłomiej Kuczyński <br>  Dwa lata z "funkcyjną" Javą 8</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('55a537ad-d9f8-47a9-b440-5ba102ed9c5a')">Grzegorz Piwowarek <br>  Java Wars VIII: The Function Awakens</a></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">13:30-14:20</td>-->
+                    <!--<td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Obiad</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">14:20-15:10</td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('00ad5c98-3f84-45e9-8079-9c96470b4f56')">Hubert Pietruszewski <br> Kto będzie używał mojej aplikacji? Development z myślą o przyszłych wdrożeniach.</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('f85b265e-6545-4cff-8313-e6ac0d241371')">Tomasz Ducin <br> JSON Schema: validate, generate, mock & automate</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('f5652f5b-13b4-427a-8c98-4992e13bc1b1')">Grzegorz Godlewski <br>  Wydajne połączenia sieciowe</a></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">15:25-16:15</td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('db6b5110-7120-40d9-81a2-2f0a9c0aed81')">Dominik Przybysz <br>  Java 9</td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('af454197-1dcf-4730-ba46-46143b360f62')">Paweł Spychalski <br>  Po godzinach: drony dla programisty</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('69e75636-e0e3-419c-aab9-8d9c15a03107')">Szymon Pacanowski <br>  Dropwizard vs Spring Boot - lightweight fight</a></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">16:30-17:20</td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('c24dfb1c-4fea-4e98-807d-0661c785b96e')">Tomasz Ducin <br>  JavaScript + Java = TypeScript</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('3ef725b0-fdc1-4fb4-84e8-891be1daf320')">Tomasz Dziurko <br>  Brzydka Pani od HR radzi, czyli 1011 błędów, które popełniają programiści</a></td>-->
+                    <!--<td class="tg-yw4l"><a onclick="showPresentationDetails('29ccfaae-7435-40de-8d17-b1c0d11e4ea3')">Tomasz Andrzejczuk <br> Od przybytku głowa nie boli</a></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">17:20</td>-->
+                    <!--<td class="tg-yw4l" style="font-weight: bold;font-size: 16px;">Zakończenie</td>-->
+                    <!--<td class="tg-yw4l"></td>-->
+                    <!--<td class="tg-yw4l"></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="tg-yw4l" colspan="4"></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="agenda-time">18:30</td>-->
+                    <!--<td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Afterparty</td>-->
+                <!--</tr>-->
+            <!--</table>-->
+        <!--</div>-->
+    <!--</section>-->
+
     <section id="sponsors">
         <div class="container">
             <div class="row">
@@ -289,88 +289,90 @@
         </div>
         <div class="container">
 			<div class="row">
-					<div class="col-lg-12 text-center space"> 
-						<h4 class="spacesm">Sponsor Platynowy</h4>
-							<div class="col-lg-12 placeholder">
-								<a href="http://www.ncdc.eu/" target="_blank"><img src="img/NCDC.png" alt="NCDC"></a>
-							</div>
-					</div>    
+					<div class="col-lg-12 text-center space">
+						<h3 class="spacesm">Zapraszamy do współpracy!</h3>
+                <!--<div class="col-lg-12 text-center space">-->
+						<!--<h4 class="spacesm">Sponsor Platynowy</h4>-->
+							<!--<div class="col-lg-12 placeholder">-->
+								<!--<a href="http://www.ncdc.eu/" target="_blank"><img src="img/NCDC.png" alt="NCDC"></a>-->
+							<!--</div>-->
+					</div>
 			</div>
             <div class="row">
-				<div class="col-lg-12 text-center space"> 
-					<h4 class="spacesm">Sponsorzy Złoci</h4>
-						<div class="row spacesm">
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://blstream.com/" target="_blank"><img src="img/bls_logo_scaled.png" alt="BLStream"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://consileon.pl/" target="_blank"><img src="img/consileon.jpg" alt="Consileon"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://itkontrakt.pl/" target="_blank"><img src="img/itkontrakt.png" alt="itKONTRAKT"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://www.mobica.com/" target="_blank"><img src="img/mobica.png" alt="mobica"></a>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12 col-sm-12 placeholder">
-								<a href="http://www.sapiens.com/" target="_blank"><img src="img/sapiens.jpg" alt="Sapiens"></a>
-							</div>
-						</div>
+				<div class="col-lg-12 text-center space">
+					<!--<h4 class="spacesm">Sponsorzy Złoci</h4>-->
+						<!--<div class="row spacesm">-->
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://blstream.com/" target="_blank"><img src="img/bls_logo_scaled.png" alt="BLStream"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://consileon.pl/" target="_blank"><img src="img/consileon.jpg" alt="Consileon"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://itkontrakt.pl/" target="_blank"><img src="img/itkontrakt.png" alt="itKONTRAKT"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://www.mobica.com/" target="_blank"><img src="img/mobica.png" alt="mobica"></a>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="row">-->
+							<!--<div class="col-lg-12 col-sm-12 placeholder">-->
+								<!--<a href="http://www.sapiens.com/" target="_blank"><img src="img/sapiens.jpg" alt="Sapiens"></a>-->
+							<!--</div>-->
+						<!--</div>-->
                 </div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12 text-center space"> 
-					<h4 class="spacesm">Sponsorzy Srebrni</h4>
-						<div class="row spacesm">
-							<div class="col-lg-12 col-sm-12 placeholder">
-								<a href="https://asseco.com/pl/" target="_blank"><img src="img/asseco.png" alt="Asseco"></a>
-							</div>
-						</div>
-				</div>
+				<div class="col-lg-12 text-center space">
+					<!--<h4 class="spacesm">Sponsorzy Srebrni</h4>-->
+						<!--<div class="row spacesm">-->
+							<!--<div class="col-lg-12 col-sm-12 placeholder">-->
+								<!--<a href="https://asseco.com/pl/" target="_blank"><img src="img/asseco.png" alt="Asseco"></a>-->
+							<!--</div>-->
+						<!--</div>-->
+				<!--</div>-->
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h4 class="spacesm">Partnerzy</h4>
+					<!--<h4 class="spacesm">Partnerzy</h4>-->
 						<div class="row spacesm">
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://osworld.pl/" target="_blank"><img src="img/osworld.png" alt="OSWorld"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://crossweb.pl/" target="_blank"><img src="img/crossweb.png" alt="Crossweb"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://klaster.it/" target="_blank"><img src="img/logo_klasterIT.png" alt="KlasterIT"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://www.technopark-pomerania.pl/" target="_blank"><img src="img/technopark.png" alt="Technopark Pomerania"></a>
-							</div>
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://osworld.pl/" target="_blank"><img src="img/osworld.png" alt="OSWorld"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://crossweb.pl/" target="_blank"><img src="img/crossweb.png" alt="Crossweb"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://klaster.it/" target="_blank"><img src="img/logo_klasterIT.png" alt="KlasterIT"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://www.technopark-pomerania.pl/" target="_blank"><img src="img/technopark.png" alt="Technopark Pomerania"></a>-->
+							<!--</div>-->
 						</div>
 						<div class="row spacesm">
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://wi.zut.edu.pl/" target="_blank"><img src="img/WI.png" alt="Wydział Informatyki"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12 placeholder">
-								<a href="http://infoludek.pl/" target="_blank"><img class="infoludek" src="img/infoludek.png" alt="Infoludek"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12">
-								<a href="https://www.tidiochat.com/" target="_blank"><img src="img/tidio.png" alt="Tidio"></a>
-							</div>
-							<div class="col-lg-3 col-sm-12">
-								<a href="http://szjug.pl/" target="_blank"><img src="img/szjug.png" alt="Szczecin JUG"></a>
-							</div>
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://wi.zut.edu.pl/" target="_blank"><img src="img/WI.png" alt="Wydział Informatyki"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12 placeholder">-->
+								<!--<a href="http://infoludek.pl/" target="_blank"><img class="infoludek" src="img/infoludek.png" alt="Infoludek"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12">-->
+								<!--<a href="https://www.tidiochat.com/" target="_blank"><img src="img/tidio.png" alt="Tidio"></a>-->
+							<!--</div>-->
+							<!--<div class="col-lg-3 col-sm-12">-->
+								<!--<a href="http://szjug.pl/" target="_blank"><img src="img/szjug.png" alt="Szczecin JUG"></a>-->
+							<!--</div>-->
 						</div>
 						<div class="row">
-							<div class="col-lg-12 col-sm-12">
-								<a href="http://scrumcitygame.pl/" target="_blank"><img src="img/scrum.png" alt="ScrumCityGame"></a>
-							</div>
+							<!--<div class="col-lg-12 col-sm-12">-->
+								<!--<a href="http://scrumcitygame.pl/" target="_blank"><img src="img/scrum.png" alt="ScrumCityGame"></a>-->
+							<!--</div>-->
 						</div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section class="bg-primary text-center" id="organizatorzy">
         <div class="container">
             <div class="row">
@@ -381,45 +383,50 @@
             </div>
         </div>
         <div class="container">
-      
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
-                    <img class="img-circle" <img src="img/Sk8.jpg" class="img-responsive" alt="Marcin Dębski" width="140" height="140">
+
+            <div class="row centered">
+                <div class="col-xs-12 col-sm-6 col-lg-3 person">
+                    <img class="img-circle" src="img/Sk8.jpg" class="img-responsive" alt="Marcin Dębski" width="140" height="140">
                     <h3>Marcin Dębski</h3>
                     <!-- <p>Programista, członek Szczecin JUG, Certified Scrum Master.</p> -->
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
-                    <img class="img-circle" src="img/49215_100000730484018_3250_n.jpg" alt="Wojciech Dębowicz" width="140" height="140">
-                    <h3>Wojciech Dębowicz</h3>
-                    <!-- <p>Programista, członek Szczecin JUG.</p> -->
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
+                <!--<div class="col-xs-12 col-sm-6 col-lg-3 placeholder">-->
+                    <!--<img class="img-circle" src="img/49215_100000730484018_3250_n.jpg" alt="Wojciech Dębowicz" width="140" height="140">-->
+                    <!--<h3>Wojciech Dębowicz</h3>-->
+                    <!--&lt;!&ndash; <p>Programista, członek Szczecin JUG.</p> &ndash;&gt;-->
+                <!--</div>-->
+                <div class="col-xs-12 col-sm-6 col-lg-3 person">
                     <img class="img-circle" src="img/kgrzasko.jpg" alt="Kamila Grząśko" width="140" height="140">
                     <h3>Kamila Grząśko</h3>
                     <!-- <p>Testerka oprogramowania, pasjonatka UX.</p> -->
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
-                    <img class="img-circle" src="img/ed2d261ca5db36a17e690dc736dcd9ef.jpeg" alt="Dariusz „Lock” Łuksza" width="140" height="140">
-                    <h3>Dariusz „Lock” Łuksza</h3>
-                    <!-- <p>Programista, uczestnik Google Summer of Code, commiter w pojekcie EGit, Top Eclipse Contributor 2011, pasjonat OpenSource oraz Linuksa, autor blogów javablog.pl i luksza.org Członek SzJUG oraz SzLUUG.</p> -->
+                <div class="col-xs-12 col-sm-6 col-lg-3 person">
+                    <img class="img-circle" src="img/retman.jpg" alt="Piotr Retmańczyk" width="140" height="140">
+                    <h3>Piotr Retmańczyk</h3>
+                    <!-- <p> Programista Java-->
                 </div>
+                <!--<div class="col-xs-12 col-sm-6 col-lg-3 placeholder">-->
+                    <!--<img class="img-circle" src="img/ed2d261ca5db36a17e690dc736dcd9ef.jpeg" alt="Dariusz „Lock” Łuksza" width="140" height="140">-->
+                    <!--<h3>Dariusz „Lock” Łuksza</h3>-->
+                    <!--&lt;!&ndash; <p>Programista, uczestnik Google Summer of Code, commiter w pojekcie EGit, Top Eclipse Contributor 2011, pasjonat OpenSource oraz Linuksa, autor blogów javablog.pl i luksza.org Członek SzJUG oraz SzLUUG.</p> &ndash;&gt;-->
+                <!--</div>-->
             </div>
-              
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
-                    <img class="img-circle" src="img/357375a.jpg" alt="Szymon „Drops” Pacanowski" width="140" height="140">
-                    <h3>Szymon „Drops” Pacanowski</h3>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
+
+            <div class="row centered-sec-row">
+                <!--<div class="col-xs-12 col-sm-6 col-lg-3 placeholder">-->
+                    <!--<img class="img-circle" src="img/357375a.jpg" alt="Szymon „Drops” Pacanowski" width="140" height="140">-->
+                    <!--<h3>Szymon „Drops” Pacanowski</h3>-->
+                <!--</div>-->
+                <div class="col-xs-12 col-sm-6 col-lg-3 person">
                     <img class="img-circle" src="img/szmajdziul.jpg" alt="Maciej Szmajdziński" width="140" height="140">
                     <h3>Maciej Szmajdziński</h3>
                     <!-- <p>Programista Java.</p> -->
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3 placeholder">
-                    <img class="img-circle" src="img/madziak.jpg" alt="Magda Dębowicz" width="140" height="140">
-                    <h3>Magda Dębowicz</h3>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-3">
+                <!--<div class="col-xs-12 col-sm-6 col-lg-3 placeholder">-->
+                    <!--<img class="img-circle" src="img/madziak.jpg" alt="Magda Dębowicz" width="140" height="140">-->
+                    <!--<h3>Magda Dębowicz</h3>-->
+                <!--</div>-->
+                <div class="col-xs-12 col-sm-6 col-lg-3 person">
                     <img class="img-circle" src="img/48590_1130557572_6747_n.jpg" alt="Paweł „Amorfis” Stawicki" width="140" height="140">
                     <h3>Paweł „Amorfis” Stawicki</h3>
                 </div>
@@ -437,13 +444,13 @@
                 </div>
                 <div class="col-lg-12 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:info@devcrowd.pl">info@devcrowd.pl</a></p>   
+                    <p><a href="mailto:info@devcrowd.pl">info@devcrowd.pl</a></p>
                 </div>
             </div>
         </div>
     </div>
 
-    
+
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
       function initialize() {
@@ -456,7 +463,7 @@
           scrollwheel: false
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
-        
+
         var marker=new google.maps.Marker({
           position:myLatLng,
           map: map
@@ -479,7 +486,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/formValidation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/framework/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>

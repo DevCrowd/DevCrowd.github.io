@@ -44,6 +44,16 @@ hr.light {
     margin-bottom: 20px;	  
 }
 
+.centered{
+    margin-left:10%;
+}
+
+.centered-sec-row{
+    margin-left:25%;
+}
+.person{
+    margin: 20px
+}
 a {
     color: #f05f40;
     -webkit-transition: all .35s;
