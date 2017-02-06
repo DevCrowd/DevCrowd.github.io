@@ -465,3 +465,15 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #222;
 }
+
+.temp-centered{
+    width:100%;
+    margin-left:auto;
+
+    margin-right:auto;
+}
+
+.temp-centered img{
+    width:500px;
+    height:250px;
+}
