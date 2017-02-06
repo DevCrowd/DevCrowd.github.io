@@ -166,8 +166,7 @@ $(document).ready(function(){
             });
         };
 
-    $('#proposalForm')
-        .formValidation({
+    $('#proposalForm').formValidation({
             framework: 'bootstrap',
             icon: {
                 valid: 'glyphicon glyphicon-ok',
