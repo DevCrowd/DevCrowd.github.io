@@ -466,8 +466,28 @@ body {
     webkit-tap-highlight-color: #222;
 }
 
-.temp-centered img{
-    width:195px;
-    height:75px;
-    margin-left:75%;
+@media (min-width: 1440px) {
+    .temp-centered img {
+        margin-left: 75%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .centered-person{
+        margin-left: 25% !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .centered {
+        margin:0;
+    }
+
+    .centered-sec-row {
+        margin: 0;
+    }
+
+    .person {
+        margin:0;
+    }
 }
