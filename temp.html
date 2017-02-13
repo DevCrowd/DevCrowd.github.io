@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DevCrowd">
+    <meta name="keywords" content="konferencja, DevCrowd">
+
+    <title>DevCrowd</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/css/formValidation.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .modal-header, .close {
+            background-color: #f05f40;
+            color: white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .throbber {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .glass {
+            z-index: 10000;
+            position: fixed;
+            background-color: #353230;
+            opacity: 0.8;
+            width: 100%;
+            height: 100%;
+            margin: 0 0;
+        }
+
+        .red-label {
+            color: #FF0000;
+        }
+
+        .green-label {
+            color: #00AF00;
+        }
+
+        .agenda {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .agenda th {
+            text-align: center;
+            padding: 10px;
+            font-size: 19px;
+        }
+
+        .agenda td {
+            border-width: 2px;
+            border-color: #f05f40;
+            border-style: solid;
+            padding: 10px;
+        }
+
+        .agenda a {
+            color: #FFF;
+        }
+
+        .agenda a:hover {
+            color: #f05f40;
+            cursor: help;
+        }
+
+        .agenda-time {
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+<section class="bg-dark" id="call4">
+    <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Call4Papers</h2>
+        <hr class="light">
+        <h4 class="space">Masz pomysł na prezentację? Zgłoś się!</h4>
+        <p>Zgłoszenia przyjmujemy do 12 marca.</p>
+    </div>
+    <div class="text-center">
+        <button type="button" class="btn btn-default btn-lg" id="proposalBtn">Zgłaszam się!</button>
+    </div>
+
+    <div class="modal fade" id="proposalModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-inbox"></span> Zgłoszenie</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form" id="proposalForm" method="post">
+                        <div class="form-group" type="speaker">
+                            <h4 class="text-center" style="color:#353230">Prezenter</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="speaker[0].name" id="name" placeholder="Imię" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="speaker[0].surname" id="surname" placeholder="Nazwisko" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="speaker[0].email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" name="speaker[0].desc" id="description" placeholder="Opis prelegenta/prelegentów"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Rozmiar koszulki</span>
+                                    <select class = "form-control" name="speaker[0].size" id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Zdjęcie</span>
+                                    <input type="file" class="form-control" name="speaker[0].picture" id="picture" placeholder="Zdjęcie" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="speaker[0].origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
+                            </div>
+                            <button type="button" class="btn btn-default addSpeakerButton green-label"><i class="fa fa-plus"></i> Kolejny prezenter</button>
+                        </div>
+                        <div class="form-group hide" id="speakerTemplate">
+                            <h4 class="text-center" style="color:#353230">Prezenter</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Imię" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="surname" id="surname" placeholder="Nazwisko" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Rozmiar koszulki</span>
+                                    <select class = "form-control" name="size" id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Zdjęcie</span>
+                                    <input type="file" class="form-control" name="picture" id="picture" placeholder="Zdjęcie" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
+                            </div>
+                            <button type="button" class="btn btn-default removeSpeakerButton red-label"><i class="fa fa-minus"></i> Usuń prezentera</button>
+                        </div>
+                        <div class="form-group" type="presentation">
+                            <h4 class="text-center" style="color:#353230">Prezentacja</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="presentation[0].title" id="title" placeholder="Tytuł" />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" name="presentation[0].desc" id="description" placeholder="Opis"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Język</span>
+                                    <select class = "form-control" name="presentation[0].lang" id="lang">
+                                        <option>PL</option>
+                                        <option>ENG</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default addPresentationButton green-label"><i class="fa fa-plus"></i> Kolejna prezentacja</button>
+                        </div>
+                        <div class="form-group hide" id="presentationTemplate">
+                            <h4 class="text-center" style="color:#353230">Prezentacja</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="title" id="title" placeholder="Tytuł" />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" name="desc" id="description" placeholder="Opis"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Język</span>
+                                    <select class = "form-control" name="lang" id="lang">
+                                        <option>PL</option>
+                                        <option>ENG</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default removePresentationButton red-label"><i class="fa fa-minus"></i> Usuń prezentację</button>
+                        </div>
+
+                        <button id="c4pSave" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="sucessModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-ok-sign"></span> Sukces !</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <p style="color: black;">Wszyskto się udało ! <br>Dzięki za złożenie propozycji. <br>Oczekuj na mail z potwierdzeniem.</p>
+                    <button type="button" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign"></span> OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="failModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <h4><span class="glyphicon glyphicon-remove-sign"></span> Ajajaj !</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <p style="color: black;">Wszyskto poszło nie tak jak powinno !<br> Spróbuj za chwilę. <br>Jak nadal będzie ała to napisz na c4p@devcrowd.pl</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="failModalBtn" type="button" class="btn btn-failure btn-block"><span class="glyphicon glyphicon-ok-sign"></span> OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/validate-js/2.0.1/validate.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+<script id="proposal-template" type="text/x-handlebars-template">
+    {{#proposals}}
+    <h2>Prelegenci</h2>
+    {{#speakers}}
+    <div>
+        <h3 style="font-weight: bold;">{{firstname}} {{lastname}}</h3>
+        {{#exists picture}}
+        <div>
+            <img style="max-width: 40%; max-height: 40%; margin-right: 10px; border-radius: 15px; float: left; box-shadow: 4px 4px 5px #888888;"
+                 src="data:image/png;base64,{{picture}}"/>
+        </div>
+        {{/exists}}
+        {{#exists description}}
+        <div>
+            <p style="word-wrap: break-word; padding-top: 25px; word-wrap: break-word; white-space: pre-line;">
+                {{description}}</p>
+        </div>
+        {{/exists}}
+    </div>
+    <br style="clear:both;"/>
+    {{/speakers}}
+    <h2>Prezentacja</h2>
+    {{#presentations}}
+    <div>
+        <h4 style="font-weight: bold; opacity: .5;">Tytuł:</h4>
+        <p>{{title}}</p>
+        <h4 style="font-weight: bold; opacity: .5;">Opis:</h4>
+        <p style="word-wrap: break-word; white-space: pre-line;">{{description}}</p>
+    </div>
+    {{/presentations}}
+    <br>
+    {{/proposals}}
+</script>
+<script src="js/c4p.js"></script>
+</body>
+</html>
