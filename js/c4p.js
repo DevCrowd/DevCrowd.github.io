@@ -60,6 +60,14 @@ $(document).ready(function(){
                 }
             }
         },
+        photoValidators = {
+            validators: {
+                file: {
+                    maxSize: 204800, //200 * 1024, max size is in bytes - 200 KB
+                    message: 'Za duze zdjęcie, użyj http://www.picresize.com/'
+                }
+            }
+        },
         emailValidators = {
             validators: {
                 notEmpty: {
@@ -150,6 +158,7 @@ $(document).ready(function(){
             jQuery.ajax({
                 'type': 'POST',
                 'url': "http://chickentest-devcrowd.rhcloud.com/proposals",
+                //'url': "http://superchicken-devcrowd.rhcloud.com/proposals",
                 'contentType': 'application/json',
                 'accept': 'application/json',
                 'data': JSON.stringify(data),
@@ -179,6 +188,7 @@ $(document).ready(function(){
                 'speaker[0].email': emailValidators,
                 'speaker[0].desc': speakerDescValidators,
                 'speaker[0].size': selectionValidators,
+                'speaker[0].picture': photoValidators,
                 'presentation[0].title': presentationTitleValidators,
                 'presentation[0].desc': presentationDescValidators,
                 'presentation[0].lang': selectionValidators
@@ -188,12 +198,12 @@ $(document).ready(function(){
             speakerIndex++;
             var template = $('#speakerTemplate'),
                 clone = template
-                            .clone()
-                            .removeClass('hide')
-                            .removeAttr('id')
-                            .attr('data-speaker-index', speakerIndex)
-                            .attr('type', 'speaker')
-                            .insertBefore(template);
+                    .clone()
+                    .removeClass('hide')
+                    .removeAttr('id')
+                    .attr('data-speaker-index', speakerIndex)
+                    .attr('type', 'speaker')
+                    .insertBefore(template);
 
             clone
                 .find('[name="name"]').attr('name', 'speaker[' + speakerIndex + '].name').end()
@@ -208,6 +218,7 @@ $(document).ready(function(){
                 .formValidation('addField', 'speaker[' + speakerIndex + '].name', nameValidators)
                 .formValidation('addField', 'speaker[' + speakerIndex + '].surname', surnameValidators)
                 .formValidation('addField', 'speaker[' + speakerIndex + '].email', emailValidators)
+                .formValidation('addField', 'speaker[' + speakerIndex + '].picture', photoValidators)
                 .formValidation('addField', 'speaker[' + speakerIndex + '].size', selectionValidators);
         })
         .on('click', '.removeSpeakerButton', function() {
@@ -227,12 +238,12 @@ $(document).ready(function(){
             presentationIndex++;
             var template = $('#presentationTemplate'),
                 clone  = template
-                            .clone()
-                            .removeClass('hide')
-                            .removeAttr('id')
-                            .attr('data-presentation-index', presentationIndex)
-                            .attr('type', 'presentation')
-                            .insertBefore(template);
+                    .clone()
+                    .removeClass('hide')
+                    .removeAttr('id')
+                    .attr('data-presentation-index', presentationIndex)
+                    .attr('type', 'presentation')
+                    .insertBefore(template);
 
             clone
                 .find('[name="title"]').attr('name', 'presentation[' + presentationIndex + '].title').end()
