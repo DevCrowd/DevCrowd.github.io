@@ -11,7 +11,8 @@ $(document).ready(function() {
 
     jQuery.ajax({
         'type': 'GET',
-        'url': "http://chickentest-devcrowd.rhcloud.com/proposals",
+        // 'url': "http://chickentest-devcrowd.rhcloud.com/proposals",
+        'url': "http://superchicken-devcrowd.rhcloud.com/proposals",
         'contentType': 'application/json',
         'accept': 'application/json',
         'success': function( data ) {

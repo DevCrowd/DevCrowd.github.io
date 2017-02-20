@@ -157,8 +157,8 @@ $(document).ready(function(){
         send = function(data) {
             jQuery.ajax({
                 'type': 'POST',
-                'url': "http://chickentest-devcrowd.rhcloud.com/proposals",
-                //'url': "http://superchicken-devcrowd.rhcloud.com/proposals",
+                // 'url': "http://chickentest-devcrowd.rhcloud.com/proposals",
+                'url': "http://superchicken-devcrowd.rhcloud.com/proposals",
                 'contentType': 'application/json',
                 'accept': 'application/json',
                 'data': JSON.stringify(data),
