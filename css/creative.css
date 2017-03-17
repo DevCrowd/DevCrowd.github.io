@@ -507,3 +507,16 @@ body {
 .avid-margin{
     margin-left: 5%;
 }
+
+.sapiens{
+    margin-left: 440px;
+    margin-right: auto;
+}
+
+.second-row-media{
+    margin-left: 30%;
+}
+
+.second-row-media div{
+    margin-right: 13%;
+}
