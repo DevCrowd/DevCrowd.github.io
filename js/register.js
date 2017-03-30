@@ -39,7 +39,7 @@ $(document).ready(function() {
             participant.lastname = jQParticipant.find('#surname').val();
             participant.email = jQParticipant.find('#email').val();
             participant.origin = jQParticipant.find('#origin').val();
-            participant.teeSize = jQParticipant.find('#size').val();
+            participant.teeSize = "XS";
 
             jQuery.ajax({
                 'type': 'POST',
