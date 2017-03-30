@@ -43,7 +43,7 @@ $(document).ready(function() {
 
             jQuery.ajax({
                 'type': 'POST',
-                'url': "http://chickentest-devcrowd.rhcloud.com/participants",
+                'url': "http://superchicken-devcrowd.rhcloud.com/participants",
                 'contentType': 'application/json',
                 'accept': 'application/json',
                 'data': JSON.stringify(participant),
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
                     jQuery.ajax({
                         'type': 'POST',
-                        'url': "http://chickentest-devcrowd.rhcloud.com/participants/" + data.id + "/votes",
+                        'url': "http://superchicken-devcrowd.rhcloud.com/participants/" + data.id + "/votes",
                         'contentType': 'application/json',
                         'accept': 'application/json',
                         'data': JSON.stringify(presentations),
@@ -86,7 +86,7 @@ $(document).ready(function() {
 
     jQuery.ajax({
         'type': 'GET',
-        'url': "http://chickentest-devcrowd.rhcloud.com/presentations?mode=1",
+        'url': "http://superchicken-devcrowd.rhcloud.com/presentations?mode=1",
         'contentType': 'application/json',
         'accept': 'application/json',
         'success': function( data ) {
@@ -134,7 +134,7 @@ function showPresentationDetails(id) {
     $('#throbber').show();
     jQuery.ajax({
         'type': 'GET',
-        'url': "http://chickentest-devcrowd.rhcloud.com/proposals/presentations/" + id + "?mode=1",
+        'url': "http://superchicken-devcrowd.rhcloud.com/proposals/presentations/" + id,
         'contentType': 'application/json',
         'accept': 'application/json',
         'success': function( data ) {
@@ -143,4 +143,28 @@ function showPresentationDetails(id) {
             $("#presentationModal").modal('toggle');
         }
     });
+}
+
+function confirm(meal) {
+    $('#throbber').show();
+    jQuery.ajax({
+        'type': 'POST',
+        'url': "http://superchicken-devcrowd.rhcloud.com/participants/" + getIdFromUrl() + "/confirmed",
+        'contentType': 'application/json',
+        'accept': 'application/json',
+        'data': JSON.stringify(meal),
+        'success': function( data ) {
+            $('#throbber').hide();
+            window.location = "regsuc.html#greatSuccess";
+        },
+        'error': function( data ) {
+            $("#failModal").modal();
+            $('#throbber').hide();
+        }
+    });
+}
+function getIdFromUrl() {
+    var regex = new RegExp("[?]id=([a-zA-Z0-9\-]*)", "i"),
+        results = regex.exec(window.location.href);
+    return decodeURIComponent(results[1]);
 }
