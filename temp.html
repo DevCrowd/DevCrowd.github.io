@@ -104,177 +104,100 @@
     </style>
 </head>
 <body>
-<section class="bg-dark" id="call4">
+<!--Agenda-->
+<section class="bg-dark" id="agenda">
+    <div class="modal fade" id="presentationModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" >
+                    <div id="fullPresentation" class="modal-body" style="color: #000000;text-align: center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Call4Papers</h2>
+        <h2 class="section-heading">Agenda</h2>
         <hr class="light">
-        <h4 class="space">Masz pomysł na prezentację? Zgłoś się!</h4>
-        <p>Zgłoszenia przyjmujemy do 12 marca.</p>
     </div>
     <div class="text-center">
-        <button type="button" class="btn btn-default btn-lg" id="proposalBtn">Zgłaszam się!</button>
-    </div>
-
-    <div class="modal fade" id="proposalModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="padding:35px 50px;">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4><span class="glyphicon glyphicon-inbox"></span> Zgłoszenie</h4>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
-                    <form role="form" id="proposalForm" method="post">
-                        <div class="form-group" type="speaker">
-                            <h4 class="text-center" style="color:#353230">Prezenter</h4>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="speaker[0].name" id="name" placeholder="Imię" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="speaker[0].surname" id="surname" placeholder="Nazwisko" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="speaker[0].email" id="email" placeholder="Email" />
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="5" name="speaker[0].desc" id="description" placeholder="Opis prelegenta/prelegentów"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon3">Rozmiar koszulki</span>
-                                    <select class = "form-control" name="speaker[0].size" id="size">
-                                        <option>XS</option>
-                                        <option>S</option>
-                                        <option>M</option>
-                                        <option>L</option>
-                                        <option>XL</option>
-                                        <option>XXL</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon3">Zdjęcie</span>
-                                    <input type="file" class="form-control" name="speaker[0].picture" id="picture" placeholder="Zdjęcie" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="speaker[0].origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
-                            </div>
-                            <button type="button" class="btn btn-default addSpeakerButton green-label"><i class="fa fa-plus"></i> Kolejny prezenter</button>
-                        </div>
-                        <div class="form-group hide" id="speakerTemplate">
-                            <h4 class="text-center" style="color:#353230">Prezenter</h4>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Imię" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="surname" id="surname" placeholder="Nazwisko" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="email" id="email" placeholder="Email" />
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon3">Rozmiar koszulki</span>
-                                    <select class = "form-control" name="size" id="size">
-                                        <option>XS</option>
-                                        <option>S</option>
-                                        <option>M</option>
-                                        <option>L</option>
-                                        <option>XL</option>
-                                        <option>XXL</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon3">Zdjęcie</span>
-                                    <input type="file" class="form-control" name="picture" id="picture" placeholder="Zdjęcie" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
-                            </div>
-                            <button type="button" class="btn btn-default removeSpeakerButton red-label"><i class="fa fa-minus"></i> Usuń prezentera</button>
-                        </div>
-                        <div class="form-group" type="presentation">
-                            <h4 class="text-center" style="color:#353230">Prezentacja</h4>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="presentation[0].title" id="title" placeholder="Tytuł" />
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="5" name="presentation[0].desc" id="description" placeholder="Opis"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon3">Język</span>
-                                    <select class = "form-control" name="presentation[0].lang" id="lang">
-                                        <option>PL</option>
-                                        <option>ENG</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-default addPresentationButton green-label"><i class="fa fa-plus"></i> Kolejna prezentacja</button>
-                        </div>
-                        <div class="form-group hide" id="presentationTemplate">
-                            <h4 class="text-center" style="color:#353230">Prezentacja</h4>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="title" id="title" placeholder="Tytuł" />
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="5" name="desc" id="description" placeholder="Opis"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon3">Język</span>
-                                    <select class = "form-control" name="lang" id="lang">
-                                        <option>PL</option>
-                                        <option>ENG</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-default removePresentationButton red-label"><i class="fa fa-minus"></i> Usuń prezentację</button>
-                        </div>
-
-                        <button id="c4pSave" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="modal fade" id="sucessModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="padding:35px 50px;">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4><span class="glyphicon glyphicon-ok-sign"></span> Sukces !</h4>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
-                    <p style="color: black;">Wszyskto się udało ! <br>Dzięki za złożenie propozycji. <br>Oczekuj na mail z potwierdzeniem.</p>
-                    <button type="button" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign"></span> OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="failModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="padding:35px 50px;">
-                    <h4><span class="glyphicon glyphicon-remove-sign"></span> Ajajaj !</h4>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
-                    <p style="color: black;">Wszyskto poszło nie tak jak powinno !<br> Spróbuj za chwilę. <br>Jak nadal będzie ała to napisz na c4p@devcrowd.pl</p>
-                </div>
-                <div class="modal-footer">
-                    <button id="failModalBtn" type="button" class="btn btn-failure btn-block"><span class="glyphicon glyphicon-ok-sign"></span> OK</button>
-                </div>
-            </div>
-        </div>
+        <table class="agenda">
+            <tr>
+                <th class="tg-yw4l"></th>
+                <th class="tg-yw4l">Sala 126</th>
+                <th class="tg-yw4l">Sala 227</th>
+                <th class="tg-yw4l">Sala 121</th>
+            </tr>
+            <tr>
+                <td class="agenda-time">8:30-9:00</td>
+                <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Rejestracja</td>
+            </tr>
+            <tr>
+                <td class="agenda-time">9:00-9:25</td>
+                <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Rozpoczęcie</td>
+            </tr>
+            <tr>
+                <td class="agenda-time">9:25-10:30</td>
+                <td class="tg-yw4l">?</td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('2df94a6a-6af5-4a72-8960-6144c46670a8')">Konrad Krakowiak<br> Kotlin dla programisty JAVA</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('cf1ea6d6-61b0-4593-960a-3af2c0ba359a')">Tomasz Kopczyński <br> Dokumentowanie API przy użyciu Spring REST</a></td>
+            </tr>
+            <tr>
+                <td class="agenda-time">10:30-11:35</td>
+                <td class="tg-yw4l">?</td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('406a58fa-cfb6-4ca3-943f-ebec967c3148')">Kamil Szewczyk <br> Continous Integration as a Code</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('bb115af7-bf0c-411b-86c7-9141e7b76b51')">Sebastian Malaca <br> Are you familiar with Test Doubles Patterns?</a></td>
+            </tr>
+            <tr>
+                <td class="agenda-time">11:35-12:40</td>
+                <td class="tg-yw4l">?</td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('31234682-297c-4d94-b1c0-ed0a91ae3fac')">Bartłomiej Kuczyński <br> Elixir dla programistów Java</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('d563092f-0af7-4846-9efd-596d09dcf103')">Łukasz Gąsior <br> Smart contracts w Ethereum, czyli blockchain na sterydach</a></td>
+            </tr>
+            <tr>
+                <td class="agenda-time">12:40-13:30</td>
+                <td class="tg-yw4l">?</td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('e6f5e3b2-5e57-4dfa-97ea-20a9615927b7')">Dominik Przybysz <br> Porty i Adaptery</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('e71dbbfe-1fa1-4efa-879a-5e474e646d4d')">Artur Kęska <br> Nie wszystko REST co się HTTP</a></td>
+            </tr>
+            <tr>
+                <td class="agenda-time">13:30-14:20</td>
+                <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Obiad</td>
+            </tr>
+            <tr>
+                <td class="agenda-time">14:20-15:25</td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('04b3c67e-c656-4dbf-8acf-6044f2e54bf1')">Maciek Próchniak <br> Platformy "zero code" - mity, złudzenia i rzeczywistość</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('63363b53-9e14-4a00-abdf-1dc7ef0b8dac')">Tomasz Schmidt <br> Jak dać radę na rozmowie rekrutacyjnej po angielsku.</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('155e3737-7624-4dfb-b0a3-0c320527e21d')">Sebastian Malaca <br> Refactoring hacked</a></td>
+            </tr>
+            <tr>
+                <td class="agenda-time">15:25-16:30</td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('391cf82a-aa16-4f8c-af49-e86982f8db86')">Marcin Stachniuk </br> Continuous Delivery w projekcie Open Source</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('4e82c12c-e7c4-4eef-8d3f-e6b9ea067805')">Szymon Pacanowski </br> Akka-http - functional approach to REST services</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('8e41bc92-a080-4e96-8c41-cfa7af3f675f')">Artur Kęska </br> TDD dla protokołów sieciowych</a></td>
+            </tr>
+            <tr>
+                <td class="agenda-time">16:30-17:30</td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('f47032be-08dd-493b-8697-698bde938385')">Bartłomiej Kuczyński </br> JUnit 5 - świety gral testów jednostkowych</a></td>
+                <td class="tg-yw4l"><a onclick="showPresentationDetails('fed3c544-ee84-42a8-b6a5-b122426e9551')">Michał Górny & Maciej Krysztofiak </br> Budowanie własnego systemu operacyjnego z wykorzystaniem Androida</a></td>
+                <td class="tg-yw4l">?</td>
+            </tr>
+            <tr>
+                <td class="agenda-time">17:30</td>
+                <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Zakończenie</td>
+            </tr>
+            <tr>
+                <td class="agenda-time">18:30</td>
+                <td class="tg-yw4l" colspan="3" style="font-weight: bold;font-size: 16px;">Afterparty</td>
+            </tr>
+        </table>
     </div>
 </section>
 
+<!--Agenda-->
+</body>
 <script src="js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
