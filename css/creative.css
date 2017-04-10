@@ -462,6 +462,10 @@ img::-moz-selection {
     margin-bottom: 20px;
 }
 
+html{
+    width: 100%;
+}
+
 body {
     webkit-tap-highlight-color: #222;
 }
@@ -525,7 +529,7 @@ body {
 .agenda {
     margin-left: auto;
     margin-right: auto;
-    width:98%;
+    width:96%;
 }
 
 .agenda th {
@@ -554,11 +558,11 @@ body {
     font-size: 17px;
 }
 
-@media (max-width: 1368px) {
+@media (max-width: 1360px) {
     .agenda {
         margin-left: auto;
         margin-right: auto;
-        width:100%;
+        width:95%;
     }
 
 }
