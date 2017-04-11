@@ -8,6 +8,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -462,7 +463,7 @@ img::-moz-selection {
     margin-bottom: 20px;
 }
 
-html{
+html {
     width: 100%;
 }
 
@@ -512,11 +513,26 @@ body {
     margin-left: 5%;
 }
 
-.sapiens {
-    margin-left: 440px;
-    margin-right: auto;
+@media (max-width: 768px) {
+    .sapiens {
+        margin-left: 120px;
+        margin-right: auto;
+    }
 }
 
+@media (min-width: 768px) {
+    .sapiens {
+        margin-left: 440px;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .agenda {
+        font-size: 7px;
+    }
+}
 .second-row-media {
     margin-left: 30%;
 }
@@ -529,7 +545,7 @@ body {
 .agenda {
     margin-left: auto;
     margin-right: auto;
-    width:96%;
+    width: 96%;
 }
 
 .agenda th {
@@ -562,7 +578,7 @@ body {
     .agenda {
         margin-left: auto;
         margin-right: auto;
-        width:95%;
+        width: 95%;
     }
 
 }
