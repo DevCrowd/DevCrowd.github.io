@@ -582,3 +582,7 @@ body {
     }
 
 }
+
+.navbar-default:hover{
+    background-color: #000;
+}
