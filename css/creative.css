@@ -501,30 +501,12 @@ body {
     margin-left: 15%;
 }
 
-.golden-sponsor {
-    margin-left: 7%;
-}
-
 .consileon {
     margin-top: 2%;
 }
 
 .avid-margin {
     margin-left: 5%;
-}
-
-@media (max-width: 768px) {
-    .sapiens {
-        margin-left: 120px;
-        margin-right: auto;
-    }
-}
-
-@media (min-width: 768px) {
-    .sapiens {
-        margin-left: 440px;
-        margin-right: auto;
-    }
 }
 
 @media (max-width: 500px) {
@@ -585,4 +567,76 @@ body {
 
 .navbar-default:hover{
     background-color: #000;
+}
+
+@media(min-width: 1024px) {
+
+    .partners {
+        margin-left: 10%;
+    }
+}
+
+.sponsors{
+    margin-left: 15%;
+    margin-right: auto;
+}
+
+/*Sponsorzy wymiary*/
+
+.sponsors div a img {
+    width: 200px;
+    height: 100px
+}
+
+@media (min-width: 1260px) {
+    .sponsors div a img {
+        width: 332px;
+        height: 100px;
+        margin: 10px;
+    }
+}
+
+.golden-sponsor, .partner-logos{
+    display: inline-block;
+    float: left;
+    margin: 30px;
+}
+
+.ncdc a img{
+    width: 370px;
+    height: 100px;
+}
+
+@media (max-width: 767px) {
+    .sapiens {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .row{
+        margin-left: 0;
+    }
+
+    .sponsors{
+        margin-left: 15%;
+        margin-right: auto;
+    }
+
+    .ncdc a img{
+        width: 200px;
+        height: 100px;
+    }
+
+    .itLeaders a img{
+        width: 200px;
+        height: 100px;
+    }
+
+}
+
+@media (width: 1024px) {
+    .sponsors{
+        margin-left: 24%;
+        margin-right: auto;
+    }
 }
