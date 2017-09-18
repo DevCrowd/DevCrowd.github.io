@@ -582,7 +582,9 @@ body {
 }
 
 /*Sponsorzy wymiary*/
-
+.sponsors-bc{
+    background-color: #000;
+}
 .sponsors div a img {
     width: 200px;
     height: 100px
