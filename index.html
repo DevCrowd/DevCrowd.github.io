@@ -114,6 +114,10 @@
                 </li>
 
                 <li>
+                    <a class="page-scroll" href="index.html#call4">C4P</a>
+                </li>
+
+                <li>
                     <a class="page-scroll" href="index.html#contact">Kontakt</a>
                 </li>
 
@@ -175,6 +179,176 @@
             </div>
             <div class="row">
 
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-dark" id="call4">
+    <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Call4Papers</h2>
+        <hr class="light">
+        <h4 class="space">Masz pomysł na prezentację? Zgłoś się!</h4>
+        <p>Zgłoszenia przyjmujemy do 15 kwietnia.</p>
+    </div>
+    <div class="text-center">
+        <button type="button" class="btn btn-default btn-lg" id="proposalBtn">Zgłaszam się!</button>
+    </div>
+
+    <div class="modal fade" id="proposalModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-inbox"></span> Zgłoszenie</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form" id="proposalForm" method="post">
+                        <div class="form-group" type="speaker">
+                            <h4 class="text-center" style="color:#353230">Prezenter</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="speaker[0].name" id="name" placeholder="Imię" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="speaker[0].surname" id="surname" placeholder="Nazwisko" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="speaker[0].email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" name="speaker[0].desc" id="description" placeholder="Opis prelegenta/prelegentów"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Rozmiar koszulki</span>
+                                    <select class = "form-control" name="speaker[0].size" id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Zdjęcie</span>
+                                    <input type="file" class="form-control" name="speaker[0].picture" id="picture" placeholder="Zdjęcie" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="speaker[0].origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
+                            </div>
+                            <button type="button" class="btn btn-default addSpeakerButton green-label"><i class="fa fa-plus"></i> Kolejny prezenter</button>
+                        </div>
+                        <div class="form-group hide" id="speakerTemplate">
+                            <h4 class="text-center" style="color:#353230">Prezenter</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Imię" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="surname" id="surname" placeholder="Nazwisko" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Rozmiar koszulki</span>
+                                    <select class = "form-control" name="size" id="size">
+                                        <option>XS</option>
+                                        <option>S</option>
+                                        <option>M</option>
+                                        <option>L</option>
+                                        <option>XL</option>
+                                        <option>XXL</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Zdjęcie</span>
+                                    <input type="file" class="form-control" name="picture" id="picture" placeholder="Zdjęcie" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="origin" id="origin" placeholder="Skąd wiesz o konferencji?" />
+                            </div>
+                            <button type="button" class="btn btn-default removeSpeakerButton red-label"><i class="fa fa-minus"></i> Usuń prezentera</button>
+                        </div>
+                        <div class="form-group" type="presentation">
+                            <h4 class="text-center" style="color:#353230">Prezentacja</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="presentation[0].title" id="title" placeholder="Tytuł" />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" name="presentation[0].desc" id="description" placeholder="Opis"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Język</span>
+                                    <select class = "form-control" name="presentation[0].lang" id="lang">
+                                        <option>PL</option>
+                                        <option>ENG</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default addPresentationButton green-label"><i class="fa fa-plus"></i> Kolejna prezentacja</button>
+                        </div>
+                        <div class="form-group hide" id="presentationTemplate">
+                            <h4 class="text-center" style="color:#353230">Prezentacja</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="title" id="title" placeholder="Tytuł" />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" name="desc" id="description" placeholder="Opis"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">Język</span>
+                                    <select class = "form-control" name="lang" id="lang">
+                                        <option>PL</option>
+                                        <option>ENG</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-default removePresentationButton red-label"><i class="fa fa-minus"></i> Usuń prezentację</button>
+                        </div>
+
+                        <button id="c4pSave" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span> Zapisz</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sucessModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-ok-sign"></span> Sukces !</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <p style="color: black;">Wszyskto się udało ! <br>Dzięki za złożenie propozycji. <br>Oczekuj na mail z potwierdzeniem.</p>
+                    <button type="button" class="btn btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign"></span> OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="failModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <h4><span class="glyphicon glyphicon-remove-sign"></span> Ajajaj !</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <p style="color: black;">Wszyskto poszło nie tak jak powinno !<br> Spróbuj za chwilę. <br>Jak nadal będzie ała to napisz na c4p@devcrowd.pl</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="failModalBtn" type="button" class="btn btn-failure btn-block"><span class="glyphicon glyphicon-ok-sign"></span> OK</button>
+                </div>
             </div>
         </div>
     </div>
