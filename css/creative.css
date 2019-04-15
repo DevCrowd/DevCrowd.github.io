@@ -36,9 +36,25 @@ hr.light {
     height: 40px;
 }
 
+.brtimg {
+    height: 250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    margin-bottom: 2%;
+}
+
 .responsive {
     max-width: 95%;
     height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .location {
@@ -88,6 +104,8 @@ h6 {
 }
 
 .spacesm {
+    display: flex;
+    justify-content: center;
     margin-bottom: 30px;
 }
 
