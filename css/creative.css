@@ -570,10 +570,10 @@ body {
     color: #FFF;
 }
 
-/* .agenda a:hover {
+.agenda a:hover {
     color: #f05f40;
     cursor: help;
-} */
+}
 
 .agenda-time {
     font-size: 17px;
